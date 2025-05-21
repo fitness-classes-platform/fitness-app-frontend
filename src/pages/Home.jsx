@@ -24,9 +24,13 @@ function HomePage() {
             <h1>Classes</h1>
             {error && <p style={{ color: "red" }}>{error}</p>}
             {data.map((item) => {
-                return <li key={item._id}>{item.name}</li>;
+                return (
+                    <div key={item._id}>
+                        <h2>{item.name}</h2>
+                        <p>{item.location}</p>
+                    </div>
+                );
             })}
-
 
         </div>
 
