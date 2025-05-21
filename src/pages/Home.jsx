@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -28,6 +29,11 @@ function HomePage() {
                     <div key={item._id}>
                         <h2>{item.name}</h2>
                         <p>{item.location}</p>
+                        <img src={item.image} />
+                        
+                        <div>
+                            <Link to={`/class/${item._id}`}> More details </Link>
+                        </div>
                     </div>
                 );
             })}

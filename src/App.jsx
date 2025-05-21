@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import axios from "axios";
 import { Routes, Route } from "react-router-dom"
 
@@ -10,6 +9,7 @@ import LoginPage from './pages/LoginPage';
 import HomePage from './pages/Home';
 import About from './pages/About';
 import Footer from './components/Footer';
+import ClassDetails from './pages/ClassDetails';
 
 function App() {
   const [classList, setClassList] = useState([])
@@ -19,6 +19,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage classList={classList} />} />
+        <Route path="/class/:classId" element={<ClassDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
