@@ -13,7 +13,8 @@ function EditClass() {
     const [classDifficulty, setClassDifficulty] = useState("");
     const [classContacts, setClassContacts] = useState("");
 
-   
+    const difficultyOptions = ["Intensive", "Medium", "Light"];
+
     useEffect(() => {
         if (classId) {
             axios
@@ -48,12 +49,12 @@ function EditClass() {
         const storedToken = localStorage.getItem("authToken");
 
         axios.put(
-                `${import.meta.env.VITE_API_URL}/api/class/${classId}`, 
-                updatedData, 
-                { headers: { Authorization: `Bearer ${storedToken}` } }
-            )
+            `${import.meta.env.VITE_API_URL}/api/class/${classId}`,
+            updatedData,
+            { headers: { Authorization: `Bearer ${storedToken}` } }
+        )
             .then(() => {
-                navigate(`/class/${classId}`); 
+                navigate(`/class/${classId}`);
             })
             .catch((error) => {
                 console.log("Error updating class data", error);
@@ -100,13 +101,18 @@ function EditClass() {
                 />
 
                 <h4>Difficulty</h4>
-                <input
-                    type="text"
+                <select
                     name="difficulty"
-                    placeholder="Class Difficulty"
                     value={classDifficulty}
                     onChange={(e) => setClassDifficulty(e.target.value)}
-                />
+                >
+                    <option value="">Select Difficulty</option>
+                    {difficultyOptions.map((option) => (
+                        <option key={option} value={option}>
+                            {option}
+                        </option>
+                    ))}
+                </select>
 
                 <h4>Contacts</h4>
                 <input

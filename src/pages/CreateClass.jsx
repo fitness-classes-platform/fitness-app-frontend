@@ -42,7 +42,7 @@ function CreateClass() {
                 navigate("/")
             })
             .catch((error) => {
-                console.error(error);
+                console.log("Error loading class data", error);
             })
             .finally(() => {
                 setLoading(false);

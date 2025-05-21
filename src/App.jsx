@@ -12,7 +12,6 @@ import About from './pages/About';
 import Footer from './components/Footer';
 import ClassDetails from './pages/ClassDetails';
 import CreateClass from './pages/CreateClass';
-import IsPrivate from './components/IsPrivate';
 import EditClass from './pages/EditClass';
 
 function App() {
