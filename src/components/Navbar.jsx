@@ -19,13 +19,19 @@ function Navbar() {
     //  depending on whether the user is logged in or not
     return (
         <nav>
-            <Link to="/">
+            <NavLink to="/">
                 <button>Home</button>
-            </Link>
+            </NavLink>
 
             <NavLink to="/about">
                 <button> About us </button>
             </NavLink>
+
+            {isLoggedIn && (
+                <NavLink to="/createClass">
+                    <button> Create Class </button>
+                </NavLink>
+            )}
 
             {isLoggedIn && (
                 <>
