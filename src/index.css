@@ -1,3 +1,22 @@
-h1 {
-    color: blue;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem;
+}
+
+.navbar button {
+    padding: 0.3rem;
+    background-color: aqua;
+    font-size: 14px;
+    width: 100px;
+    border-radius: 5px;
 }
