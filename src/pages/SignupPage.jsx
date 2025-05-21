@@ -28,7 +28,7 @@ function SignupPage(props) {
 
     const requestBody = { email, password, name };
 
-    axios.post(`${API_URL}/auth/signup`, requestBody)
+    axios.post(`${API_URL}/auth/signup`, requestBody, { withCredentials: true })
       .then((response) => {
         navigate('/login');
       })
