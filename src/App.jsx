@@ -3,19 +3,26 @@ import './App.css'
 import axios from "axios";
 import { Routes, Route } from "react-router-dom"
 
+
 import Navbar from './components/Navbar';
 import SignupPage from "./pages/SignupPage";
 import LoginPage from './pages/LoginPage';
+import HomePage from './pages/Home';
+import About from './pages/About';
+import Footer from './components/Footer';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [classList, setClassList] = useState([])
 
   return (
     <div>
       <Navbar />
       <Routes>
-        <Route path = "/signup" element={<SignupPage />} />
-        <Route path = "/login" element={<LoginPage />} />
+        <Route path="/" element={<HomePage classList={classList} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/footer" element={<Footer />} />
       </Routes>
     </div>
   )
