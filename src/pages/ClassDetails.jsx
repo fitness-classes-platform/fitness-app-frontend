@@ -25,6 +25,7 @@ function ClassDetails (){
 
     return(
         <div>
+            <img src={classData.image} />
             <h1>{classData.name}</h1>
             <h2>{classData.location}</h2>
 
@@ -33,7 +34,7 @@ function ClassDetails (){
             <p>{classData.contacts}</p>
 
             <div>
-                <Link to={"/"}> Back to homepage </Link>
+                <Link to={`/class/edit/${classId}`}> Edit Class </Link>
             </div>
         </div>
     )
