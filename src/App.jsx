@@ -4,15 +4,18 @@ import axios from "axios";
 import { Routes, Route } from "react-router-dom"
 
 import Navbar from './components/Navbar';
+import SignupPage from "./pages/SignupPage";
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div>
       <Navbar />
-      <h1>hello</h1>
-    </>
+      <Routes>
+        <Route path = "/signup" element={<SignupPage />} />
+      </Routes>
+    </div>
   )
 }
 
