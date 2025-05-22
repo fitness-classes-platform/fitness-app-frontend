@@ -13,6 +13,11 @@ import Footer from './components/Footer';
 import ClassDetails from './pages/ClassDetails';
 import CreateClass from './pages/CreateClass';
 import EditClass from './pages/EditClass';
+<<<<<<< HEAD
+=======
+import CreateReviews from './pages/Reviews';
+
+>>>>>>> e0557dfe3486251e12fb845ac971aac37c53150c
 
 function App() {
   const [classList, setClassList] = useState([])
@@ -49,6 +54,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/createClass" element={<IsPrivate><CreateClass /></IsPrivate>} />
+        <Route path="/createReviews/:classId" element={<CreateReviews />} />
         <Route path="/footer" element={<Footer />} />
       </Routes>
     </div>
