@@ -33,8 +33,12 @@ function ClassDetails (){
             <p>{classData.difficulty}</p>
             <p>{classData.contacts}</p>
 
+            <h3>Reviews:</h3>
+            <p>{classData.reviews}</p>
+
             <div>
                 <Link to={`/class/edit/${classId}`}> Edit Class </Link>
+                <Link to={`/createReviews/${classId}`}> Give us your review of this class </Link>
             </div>
         </div>
     )

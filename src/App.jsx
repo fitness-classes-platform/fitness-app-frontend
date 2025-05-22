@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import ClassDetails from './pages/ClassDetails';
 import CreateClass from './pages/CreateClass';
 import EditClass from './pages/EditClass';
+import CreateReviews from './pages/Reviews';
 
 function App() {
   const [classList, setClassList] = useState([])
@@ -43,12 +44,13 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage classList={classList} onDeleteClass={handleDelete}/>} />
-        <Route path="/class/:classId" element={<ClassDetails />} />
+        <Route path="/class/:classId" element={<ClassDetails> </ClassDetails>} />
         <Route path="/class/edit/:classId" element={ <EditClass> </EditClass>} />
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/createClass" element={ <IsPrivate> <CreateClass /> </IsPrivate>} />
+        <Route path="/createReviews/:classId" element={ <IsPrivate> <CreateReviews /> </IsPrivate>} />
         <Route path="/footer" element={<Footer />} />
       </Routes>
     </div>
