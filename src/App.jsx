@@ -13,7 +13,6 @@ import Footer from './components/Footer';
 import ClassDetails from './pages/ClassDetails';
 import CreateClass from './pages/CreateClass';
 import EditClass from './pages/EditClass';
-import SearchBar from './components/SearchBar';
 
 function App() {
   const [classList, setClassList] = useState([])
