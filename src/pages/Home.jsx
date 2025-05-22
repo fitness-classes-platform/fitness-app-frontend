@@ -1,16 +1,22 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "../components/SearchBar";
 
 
 
-function HomePage({onDeleteClass}) {
+function HomePage({onDeleteClass , classes}) {
     const [data, setData] = useState([])
     const [error, setError] = useState(null);
+    const [searchTerm, setSearchTerm] = useState("");
 
     const handleDelete = (classId) => {
         onDeleteClass(classId);
         setData((prev) => prev.filter((item) => item._id !== classId));
+    };
+
+    const handleSearch = (term) => {
+        setSearchTerm(term.toLowerCase());
     };
 
     useEffect(() => {
@@ -25,30 +31,28 @@ function HomePage({onDeleteClass}) {
 
     }, []);
 
+    const filteredData = data.filter((item) =>
+        item.name.toLowerCase().includes(searchTerm)
+    );
+
     return (
         <div>
             <h1>Classes</h1>
+            <SearchBar onSearch={handleSearch} />
             {error && <p style={{ color: "red" }}>{error}</p>}
-            {data.map((item) => {
-                return (
-                    <div key={item._id}>
-                        <h2>{item.name}</h2>
-                        <p>{item.location}</p>
-                        <img src={item.image} />
-                        
-                        <div>
-                            <Link to={`/class/${item._id}`}> More details </Link>
-                            <button onClick={() => handleDelete(item._id)}>Delete</button>
-                        </div>
-                
+            {filteredData.map((item) => (
+                <div key={item._id}>
+                    <h2>{item.name}</h2>
+                    <p>{item.location}</p>
+                    <img src={item.image} />
+                    <div>
+                        <Link to={`/class/${item._id}`}> More details </Link>
+                        <button onClick={() => handleDelete(item._id)}>Delete</button>
                     </div>
-                );
-            })}
-
+                </div>
+            ))}
         </div>
-
-
-    )
+    );
 }
 
 export default HomePage

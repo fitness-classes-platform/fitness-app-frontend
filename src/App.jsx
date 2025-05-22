@@ -13,11 +13,12 @@ import Footer from './components/Footer';
 import ClassDetails from './pages/ClassDetails';
 import CreateClass from './pages/CreateClass';
 import EditClass from './pages/EditClass';
-import CreateReviews from './pages/Reviews';
+import SearchBar from './components/SearchBar';
 
 function App() {
   const [classList, setClassList] = useState([])
   const [error, setError] = useState(null);
+  const [filteredClasses, setFilteredClasses] = useState([]);
 
   const handleDelete = (classId) => {
     const confirmed = window.confirm("Are you sure you want to delete this city?");
@@ -26,31 +27,29 @@ function App() {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-    .delete(`${import.meta.env.VITE_API_URL}/api/class/${classId}`, {
-      headers: { Authorization: `Bearer ${storedToken}` },
-    })
-    .then(() => {
-      setClassList((prev) => prev.filter((cls) => cls._id !== classId)); // Use _id instead of id
-    })
-    .catch((err) => {
-      console.error("Error deleting class", err);
-      setError("Failed to delete the class. Please try again.");
-    });
-};
-
+      .delete(`${import.meta.env.VITE_API_URL}/api/class/${classId}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then(() => {
+        setClassList((prev) => prev.filter((cls) => cls._id !== classId));
+      })
+      .catch((err) => {
+        console.error("Error deleting class", err);
+        setError("Failed to delete the class. Please try again.");
+      });
+  };
 
   return (
     <div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage classList={classList} onDeleteClass={handleDelete}/>} />
-        <Route path="/class/:classId" element={<ClassDetails> </ClassDetails>} />
-        <Route path="/class/edit/:classId" element={ <EditClass> </EditClass>} />
+        <Route path="/" element={<HomePage classes={filteredClasses} onDeleteClass={handleDelete} />} />
+        <Route path="/class/:classId" element={<ClassDetails />} />
+        <Route path="/class/edit/:classId" element={<EditClass />} />
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/createClass" element={ <IsPrivate> <CreateClass /> </IsPrivate>} />
-        <Route path="/createReviews/:classId" element={ <IsPrivate> <CreateReviews /> </IsPrivate>} />
+        <Route path="/createClass" element={<IsPrivate><CreateClass /></IsPrivate>} />
         <Route path="/footer" element={<Footer />} />
       </Routes>
     </div>
@@ -58,3 +57,4 @@ function App() {
 }
 
 export default App
+
