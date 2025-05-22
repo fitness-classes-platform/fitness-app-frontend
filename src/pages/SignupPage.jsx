@@ -12,12 +12,12 @@ function SignupPage(props) {
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
-  
+
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
   const handleName = (e) => setName(e.target.value);
 
-  
+
   const handleSignupSubmit = (e) => {
     e.preventDefault();
 
@@ -38,43 +38,45 @@ function SignupPage(props) {
       })
   };
 
-  
+
   return (
-    <div className="SignupPage">
-      <h1>Sign Up</h1>
+    <div className="signup">
+      <div className="signupPage">
+        <h1>Sign Up</h1>
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input 
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleEmail}
-        />
+        <form onSubmit={handleSignupSubmit} className="signupPageForm">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleEmail}
+          />
 
-        <label>Password:</label>
-        <input 
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePassword}
+          />
 
-        <label>Name:</label>
-        <input 
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleName}
-        />
+          <label>Username</label>
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleName}
+          />
 
-        <button type="submit">Sign Up</button>
-      </form>
+          <button type="submit">Create Account</button>
+        </form>
 
-      { errorMessage && <p className="error-message">{errorMessage}</p> }
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+        <p>Already have an account?</p>
+        <Link to={"/login"} className="signupPageLink"> Login</Link>
+      </div>
     </div>
   )
 }
