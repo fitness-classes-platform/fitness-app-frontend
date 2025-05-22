@@ -13,7 +13,8 @@ import Footer from './components/Footer';
 import ClassDetails from './pages/ClassDetails';
 import CreateClass from './pages/CreateClass';
 import EditClass from './pages/EditClass';
-import SearchBar from './components/SearchBar';
+import CreateReviews from './pages/Reviews';
+
 
 function App() {
   const [classList, setClassList] = useState([])
@@ -50,6 +51,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/createClass" element={<IsPrivate><CreateClass /></IsPrivate>} />
+        <Route path="/createReviews/:classId" element={<CreateReviews />} />
         <Route path="/footer" element={<Footer />} />
       </Routes>
     </div>
