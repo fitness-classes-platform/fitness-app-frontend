@@ -4,9 +4,14 @@ import { Link } from "react-router-dom";
 
 
 
-function HomePage() {
+function HomePage({onDeleteClass}) {
     const [data, setData] = useState([])
     const [error, setError] = useState(null);
+
+    const handleDelete = (classId) => {
+        onDeleteClass(classId);
+        setData((prev) => prev.filter((item) => item._id !== classId));
+    };
 
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_API_URL}/api/class`)
@@ -33,7 +38,9 @@ function HomePage() {
                         
                         <div>
                             <Link to={`/class/${item._id}`}> More details </Link>
+                            <button onClick={() => handleDelete(item._id)}>Delete</button>
                         </div>
+                
                     </div>
                 );
             })}
