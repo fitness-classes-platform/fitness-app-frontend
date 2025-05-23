@@ -23,9 +23,6 @@ function App() {
   const [filteredClasses, setFilteredClasses] = useState([]);
 
   const handleDeleteClass = (classId) => {
-    const confirmed = window.confirm("Are you sure you want to delete this class?");
-    if (!confirmed) return;
-
     const storedToken = localStorage.getItem("authToken");
 
     axios

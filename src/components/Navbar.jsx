@@ -20,37 +20,55 @@ function Navbar() {
     return (
         <div>
             <nav className="navbar">
-                <NavLink to="/">
-                    <button>Home</button>
-                </NavLink>
-
-                <NavLink to="/about">
-                    <button>About us</button>
-                </NavLink>
-
-                {isLoggedIn && (
-                    <NavLink to="/createClass">
-                        <button>Create Class</button>
+                <div>
+                    <NavLink to="/">
+                        <img src="https://i.imgur.com/KqAeA7B.png" alt="app-logo" />
                     </NavLink>
-                )}
+                </div>
 
-                {isLoggedIn && (
-                    <>
-                        <Link to="/projects">
-                            <button>Projects</button>
-                        </Link>
+                <div className="navbar-center">
+                    <div>
+                        <NavLink to="/">
+                            <button className="home-btn">HOME</button>
+                        </NavLink>
+                    </div>
 
-                        <button onClick={logOutUser}>Logout</button>
-                        <h4>{user && user.name}</h4>
-                    </>
-                )}
+                    <div>
 
-                {!isLoggedIn && (
-                    <>
-                        <Link to="/signup"> <button>Sign Up</button> </Link>
-                        <Link to="/login"> <button>Login</button> </Link>
-                    </>
-                )}
+                        {isLoggedIn && (
+                            <NavLink to="/createClass">
+                                <button className="createClass-btn">CREATE CLASS</button>
+                            </NavLink>
+                        )}
+
+                    </div>
+
+                    <div>
+
+                        <NavLink to="/about">
+                            <button className="aboutUs-btn">ABOUT US</button>
+                        </NavLink>
+
+                    </div>
+
+                </div>
+
+                <div className="navbar-user">
+
+                    {isLoggedIn && (
+                        <>
+                            <h4>{user && user.name}</h4>
+                            <button className="logout-btn" onClick={logOutUser}>Logout</button>
+                        </>
+                    )}
+
+                    {!isLoggedIn && (
+                        <>
+                            <Link to="/login"> <button className="login-btn">Login</button> </Link>
+                            <Link to="/signup"> <button className="signup-btn">Sign Up</button> </Link>
+                        </>
+                    )}
+                </div>
 
             </nav>
         </div>

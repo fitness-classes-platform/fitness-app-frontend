@@ -11,6 +11,9 @@ function HomePage({onDeleteClass , classes}) {
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleDelete = (classId) => {
+        const confirmed = window.confirm("Are you sure you want to delete this class?");
+        if (!confirmed) return;
+        
         onDeleteClass(classId);
         setData((prev) => prev.filter((item) => item._id !== classId));
     };

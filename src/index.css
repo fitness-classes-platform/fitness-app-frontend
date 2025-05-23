@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(238, 238, 238);
 }
 
 h1 {
@@ -25,20 +26,107 @@ h3 {
 
 
 .navbar {
-    background-color: antiquewhite;
+    padding: 0.8rem;
+    background-color: rgb(216, 216, 216);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    padding: 1rem;
 }
 
-.navbar button {
+.navbar-center {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+}
+
+.navbar img {
+    width: 60px;
+    margin-left: 30px;
+}
+
+.navbar-user {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-user h4 {
+    font-size: 16px;
+    font-family: "Martian Mono", monospace;
+}
+
+.logout-btn {
+    background-color: rgb(255, 0, 0);
+    text-align: center;
     padding: 0.3rem;
-    background-color: aqua;
-    font-size: 14px;
-    width: 100px;
+    border: none;
     border-radius: 5px;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: rgb(235, 0, 0);
+}
+
+.home-btn,
+.aboutUs-btn {
+    text-align: center;
+    padding: 0.3rem;
+    border: none;
+    font-family: "Poetsen One", sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+    background: transparent;
+}
+
+.createClass-btn {
+    background-color: rgb(16, 141, 0);
+    text-align: center;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: "Poetsen One", sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.signup-btn {
+    background-color: rgb(255, 94, 0);
+    text-align: center;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    width: 90px;
+}
+
+.signup-btn:hover {
+    background-color: rgb(220, 80, 0);
+}
+
+.login-btn {
+    background-color: rgb(0, 143, 19);
+    text-align: center;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    width: 90px;
+}
+
+.login-btn:hover {
+    background-color: rgb(0, 120, 19);
 }
 
 .signup {
