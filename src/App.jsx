@@ -16,6 +16,7 @@ import EditClass from './pages/EditClass';
 import CreateReviews from './pages/Reviews';
 import EditReview from './pages/EditReview';
 
+
 function App() {
   const [classList, setClassList] = useState([]);
   const [error, setError] = useState(null);
