@@ -41,13 +41,15 @@ function HomePage({onDeleteClass , classes}) {
             <SearchBar onSearch={handleSearch} />
             {error && <p style={{ color: "red" }}>{error}</p>}
             {filteredData.map((item) => (
-                <div key={item._id}>
+                <div key={item._id} className="homePage-card">
                     <h2>{item.name}</h2>
                     <p>{item.location}</p>
                     <img src={item.image} />
-                    <div>
+                    <div className="buttons">
+                        <button className="details-btn">
                         <Link to={`/class/${item._id}`}> More details </Link>
-                        <button onClick={() => handleDelete(item._id)}>Delete</button>
+                        </button>
+                        <button onClick={() => handleDelete(item._id)} className="delete-btn">Delete</button>
                     </div>
                 </div>
             ))}

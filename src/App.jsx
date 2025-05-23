@@ -15,7 +15,7 @@ import CreateClass from './pages/CreateClass';
 import EditClass from './pages/EditClass';
 import CreateReviews from './pages/Reviews';
 import EditReview from './pages/EditReview';
-import PrivateReviewEditRoute from './components/PrivateReviewEditRoute';
+
 
 function App() {
   const [classList, setClassList] = useState([]);
