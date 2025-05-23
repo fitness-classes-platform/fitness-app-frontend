@@ -1,12 +1,19 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
+import { useContext } from "react";                     // <== IMPORT 
+import { AuthContext } from "../context/auth.context";  // <== IMPORT
 
 
 function ClassDetails() {
     const { classId } = useParams();
     const [classData, setClassData] = useState(null)
     const [reviews, setReviews] = useState([])
+    const {
+        isLoggedIn,
+        user,
+        logOutUser
+    } = useContext(AuthContext);
 
 
     useEffect(() => {
@@ -55,12 +62,21 @@ function ClassDetails() {
                             <h3>{review.title || "No Title"}</h3>
                             <p>{review.description || "No Description"}</p>
                             <p>Ranking: {review.ranking ?? "No Ranking"}</p>
+                            {isLoggedIn && (
+                                <Link to={`/review/${review._id}`}> Edit Review </Link>
+                            )}
                         </div>
                     )
                 ))
             )}
-            <Link to={`/class/edit/${classId}`}> Edit Class </Link>
-            <Link to={`/createReviews/${classId}`}> Give us your review of this class </Link>
+            {isLoggedIn ? (
+                <>
+                    <Link to={`/class/edit/${classId}`}> Edit Class </Link>
+                    <Link to={`/createReviews/${classId}`}> Give us your review of this class </Link>
+                </>
+            ) : (
+                <p>Please log in to edit or review this class.</p>
+            )}
         </div>
     )
 }

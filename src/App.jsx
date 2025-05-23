@@ -14,6 +14,7 @@ import ClassDetails from './pages/ClassDetails';
 import CreateClass from './pages/CreateClass';
 import EditClass from './pages/EditClass';
 import CreateReviews from './pages/Reviews';
+import EditReview from './pages/EditReview';
 
 
 function App() {
@@ -46,12 +47,13 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage classes={filteredClasses} onDeleteClass={handleDelete} />} />
         <Route path="/class/:classId" element={<ClassDetails />} />
-        <Route path="/class/edit/:classId" element={<EditClass />} />
+        <Route path="/class/edit/:classId" element={<IsPrivate><EditClass /></IsPrivate>} />
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/createClass" element={<IsPrivate><CreateClass /></IsPrivate>} />
         <Route path="/createReviews/:classId" element={<CreateReviews />} />
+        <Route path="/review/:reviewId" element = {<EditReview />} />
         <Route path="/footer" element={<Footer />} />
       </Routes>
     </div>
