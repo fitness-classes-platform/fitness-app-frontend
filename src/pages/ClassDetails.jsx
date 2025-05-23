@@ -1,53 +1,64 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";                     // <== IMPORT 
 import { AuthContext } from "../context/auth.context";  // <== IMPORT
 
-
 function ClassDetails() {
     const { classId } = useParams();
-    const [classData, setClassData] = useState(null)
-    const [reviews, setReviews] = useState([])
+    const [classData, setClassData] = useState(null);
+    const [reviews, setReviews] = useState([]);
+    const [error, setError] = useState(null);
     const {
         isLoggedIn,
         user,
         logOutUser
     } = useContext(AuthContext);
 
+    const handleDelete = (reviewId) => {
+        const confirmed = window.confirm("Are you sure you want to delete this review?");
+        if (!confirmed) return;
+
+        const storedToken = localStorage.getItem("authToken");
+
+        axios
+            .delete(`${import.meta.env.VITE_API_URL}/api/review/${reviewId}`, {
+                headers: { Authorization: `Bearer ${storedToken}` },
+            })
+            .then(() => {
+                setReviews((prev) => prev.filter((review) => review._id !== reviewId));
+            })
+            .catch((error) => {
+                console.error("Error deleting review:", error);
+            });
+    };
 
     useEffect(() => {
         axios
             .get(`${import.meta.env.VITE_API_URL}/api/class/${classId}`)
             .then((response) => {
-                setClassData(response.data)
+                setClassData(response.data);
+                setReviews(response.data.reviews); // Set reviews directly
             })
             .catch((e) => {
-                console.log("Error finding classes", e);
-            })
-
-        axios
-            .get(`${import.meta.env.VITE_API_URL}/api/review/class/${classId}`)
-            .then((response) => {
-                setReviews(response.data);
-            })
-            .catch((e) => {
-                console.log("Error loading reviews", e);
+                console.log("Error finding class details", e);
+                setError("Failed to load class details. Please try again later.");
             });
-    }, [classId])
+    }, [classId]);
 
-    if (!classData) {
-        return <p> Loading </p>
+    if (error) {
+        return <p style={{ color: "red" }}>{error}</p>;
     }
 
-
+    if (!classData) {
+        return <p>Loading...</p>;
+    }
 
     return (
         <div>
-            <img src={classData.image} />
+            <img src={classData.image} alt={classData.name} />
             <h1>{classData.name}</h1>
             <h2>{classData.location}</h2>
-
             <p>{classData.schedule}</p>
             <p>{classData.difficulty}</p>
             <p>{classData.contacts}</p>
@@ -63,7 +74,10 @@ function ClassDetails() {
                             <p>{review.description || "No Description"}</p>
                             <p>Ranking: {review.ranking ?? "No Ranking"}</p>
                             {isLoggedIn && (
-                                <Link to={`/review/${review._id}`}> Edit Review </Link>
+                                <>
+                                    <Link to={`/review/${review._id}`}> Edit Review </Link>
+                                    <button onClick={() => handleDelete(review._id)}>Delete Review</button>
+                                </>
                             )}
                         </div>
                     )
@@ -78,8 +92,7 @@ function ClassDetails() {
                 <p>Please log in to edit or review this class.</p>
             )}
         </div>
-    )
+    );
 }
 
-
-export default ClassDetails
+export default ClassDetails;
