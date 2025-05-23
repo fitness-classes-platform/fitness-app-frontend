@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 function EditReview() {
-    const { reviewId } = useParams(); // <<< reviewId vem da URL
+    const { reviewId } = useParams();
     const navigate = useNavigate();
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [ranking, setRanking] = useState(1); // ranking entre 1-5
+    const [ranking, setRanking] = useState(1);
 
     useEffect(() => {
         if (reviewId) {
@@ -46,7 +46,7 @@ function EditReview() {
                 }
             )
             .then(() => {
-                navigate(-1); // ou para uma rota específica
+                navigate(-1);
             })
             .catch((error) => {
                 console.log("Error updating review", error);

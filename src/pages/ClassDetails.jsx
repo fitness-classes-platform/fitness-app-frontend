@@ -15,6 +15,8 @@ function ClassDetails() {
         logOutUser
     } = useContext(AuthContext);
 
+    const currentUserId = user?._id;
+
     const handleDelete = (reviewId) => {
         const confirmed = window.confirm("Are you sure you want to delete this review?");
         if (!confirmed) return;
@@ -73,7 +75,7 @@ function ClassDetails() {
                             <h3>{review.title || "No Title"}</h3>
                             <p>{review.description || "No Description"}</p>
                             <p>Ranking: {review.ranking ?? "No Ranking"}</p>
-                            {isLoggedIn && (
+                            {isLoggedIn && review.author === currentUserId && (
                                 <>
                                     <Link to={`/review/${review._id}`}> Edit Review </Link>
                                     <button onClick={() => handleDelete(review._id)}>Delete Review</button>
