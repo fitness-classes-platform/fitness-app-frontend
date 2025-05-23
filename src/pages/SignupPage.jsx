@@ -61,6 +61,13 @@ function SignupPage(props) {
             onChange={handlePassword}
           />
 
+          <ul>
+            <li>At least 6 characters</li>
+            <li>At least one number</li>
+            <li>At least one lowercase letter</li>
+            <li>At least one uppercase letter</li>
+          </ul>
+
           <label>Username</label>
           <input
             type="text"

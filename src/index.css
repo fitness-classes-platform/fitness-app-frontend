@@ -115,6 +115,14 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.signupPage ul {
+    list-style: none;
+    font-size: 11px;
+    color: rgb(65, 65, 65);
+    margin-top: 5px;
+    padding-left: 0;
+}
+
 .signin {
     display: flex;
     justify-content: center;
