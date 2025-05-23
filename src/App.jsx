@@ -15,6 +15,7 @@ import CreateClass from './pages/CreateClass';
 import EditClass from './pages/EditClass';
 import CreateReviews from './pages/Reviews';
 import EditReview from './pages/EditReview';
+import PrivateReviewEditRoute from './components/PrivateReviewEditRoute';
 
 function App() {
   const [classList, setClassList] = useState([]);
@@ -86,6 +87,7 @@ function App() {
         />
         <Route path="/createReviews/:classId" element={<CreateReviews />} />
         <Route path="/review/:reviewId" element = {<EditReview />} />
+        <Route path="/reviews/:id/edit" element={<PrivateReviewEditRoute />} />
         <Route path="/footer" element={<Footer />} />
       </Routes>
     </div>
