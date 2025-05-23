@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
 
 * {
     margin: 0;
@@ -6,10 +7,14 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #f2ffbf;
+}
+
 h1 {
     font-size: 2.5rem;
     color: black;
-    margin-bottom: 2rem;
+    text-align: center;
 }
 
 h2 {
@@ -26,30 +31,39 @@ h3 {
 
 
 .navbar {
-    padding: 0.8rem;
-    background-color: rgb(216, 216, 216);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 0.8rem;
+  background-color: rgb(216, 216, 216);
+  display: flex;
+  align-items: center;
 }
 
-.navbar-center {
-    display: flex;
-    align-items: center;
-    gap: 150px;
+.navbar-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .navbar img {
     width: 60px;
-    margin-left: 30px;
+}
+
+.navbar-center {
+  flex: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  text-align: center;
 }
 
 .navbar-user {
-    margin-right: 30px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
 }
+
 
 .navbar-user h4 {
     font-size: 16px;
@@ -75,12 +89,12 @@ h3 {
 .home-btn,
 .aboutUs-btn {
     text-align: center;
-    padding: 0.3rem;
     border: none;
     font-family: "Poetsen One", sans-serif;
     font-size: 22px;
     cursor: pointer;
     background: transparent;
+    width: 100px;
 }
 
 .createClass-btn {
@@ -93,6 +107,7 @@ h3 {
     font-family: "Poetsen One", sans-serif;
     font-size: 20px;
     cursor: pointer;
+    width: 150px;
 }
 
 .signup-btn {
@@ -256,7 +271,7 @@ h3 {
     background-color: rgb(255, 230, 0);
 }
 
-.loginPageForm{
+.loginPageForm {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
@@ -336,7 +351,7 @@ h3 {
 .homePage {
     display: flex;
     flex-wrap: wrap;
-    justify-content:flex-start;
+    justify-content: flex-start;
     gap: 2.5rem;
 }
 
@@ -352,16 +367,23 @@ h3 {
     align-items: center;
     gap: 1rem;
     margin: 30px 20px;
+    background-color: #fff4f4;
 }
 
 .homePage-card:hover {
-    background-color: #bfdbfe;
+    background-color: #fff0f0;
     transform: scale(1.05);
 }
 
-.homePage-card img{
+.homePage-card img {
     width: 400px;
     height: 280px;
+}
+
+.homePage-card p {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+    color: #585858;
 }
 
 .buttons {
@@ -372,7 +394,9 @@ h3 {
 }
 
 .details-btn {
-    color: white;
+    text-decoration: none;
+    background-color: #9900ad;
+    color: rgb(255, 255, 255);
     padding: 8px 12px;
     border-radius: 8px;
     border: none;
@@ -381,23 +405,48 @@ h3 {
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     transition: background-color 0.2s;
-    text-decoration: none;
     margin: 10px 10px 10px 10px;
     width: 100px;
+    font-family: "Open Sans", sans-serif;
 }
 
 .delete-btn {
+    text-decoration: none;
     background-color: #ff0000;
     color: white;
     padding: 8px 12px;
     border-radius: 8px;
     border: none;
     font-weight: 500;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     transition: background-color 0.2s;
-    text-decoration: none;
     margin: 10px;
     width: 70px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.classes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.home-page h1 {
+    color: #000000;
+    font-family: "Rowdies", sans-serif;
+    padding: 0.5rem;
+}
+
+.searchBar-bar {
+    text-align: center;
+    font-size: 16px;
 }

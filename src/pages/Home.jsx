@@ -2,18 +2,26 @@ import axios from "axios"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
+import { useContext } from "react";                     // <== IMPORT 
+import { AuthContext } from "../context/auth.context";  // <== IMPORT
 
 
 
-function HomePage({onDeleteClass , classes}) {
+function HomePage({ onDeleteClass, classes }) {
     const [data, setData] = useState([])
     const [error, setError] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
 
+    const {
+        isLoggedIn,
+        user,
+        logOutUser
+    } = useContext(AuthContext);
+
     const handleDelete = (classId) => {
         const confirmed = window.confirm("Are you sure you want to delete this class?");
         if (!confirmed) return;
-        
+
         onDeleteClass(classId);
         setData((prev) => prev.filter((item) => item._id !== classId));
     };
@@ -39,23 +47,27 @@ function HomePage({onDeleteClass , classes}) {
     );
 
     return (
-        <div>
-            <h1>Classes</h1>
+        <div className="home-page">
+            <h1>CLASSES</h1>
             <SearchBar onSearch={handleSearch} />
-            {error && <p style={{ color: "red" }}>{error}</p>}
-            {filteredData.map((item) => (
-                <div key={item._id} className="homePage-card">
-                    <h2>{item.name}</h2>
-                    <p>{item.location}</p>
-                    <img src={item.image} />
-                    <div className="buttons">
-                        <button className="details-btn">
-                        <Link to={`/class/${item._id}`}> More details </Link>
-                        </button>
-                        <button onClick={() => handleDelete(item._id)} className="delete-btn">Delete</button>
+            <div className="classes">
+                {error && <p style={{ color: "red" }}>{error}</p>}
+                {filteredData.map((item) => (
+                    <div key={item._id} className="homePage-card">
+                        <h2>{item.name}</h2>
+                        <p>📍<br />{item.location}</p>
+                        <img src={item.image} />
+                        <div className="buttons">
+                            <Link to={`/class/${item._id}`} className="details-btn">
+                                More details
+                            </Link>
+                            {isLoggedIn && (
+                                <button onClick={() => handleDelete(item._id)} className="delete-btn">Delete</button>
+                            )}
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     );
 }

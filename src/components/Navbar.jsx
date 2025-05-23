@@ -20,56 +20,55 @@ function Navbar() {
     return (
         <div>
             <nav className="navbar">
-                <div>
-                    <NavLink to="/">
-                        <img src="https://i.imgur.com/KqAeA7B.png" alt="app-logo" />
-                    </NavLink>
-                </div>
-
-                <div className="navbar-center">
-                    <div>
+                    <div className="navbar-left">
                         <NavLink to="/">
-                            <button className="home-btn">HOME</button>
+                            <img src="https://i.imgur.com/KqAeA7B.png" alt="app-logo" />
                         </NavLink>
                     </div>
 
-                    <div>
+                    <div className="navbar-center">
+                        <div>
+                            <NavLink to="/">
+                                <button className="home-btn">HOME</button>
+                            </NavLink>
+                        </div>
+
+                        <div>
+
+                            {isLoggedIn && (
+                                <NavLink to="/createClass">
+                                    <button className="createClass-btn">CREATE CLASS</button>
+                                </NavLink>
+                            )}
+
+                        </div>
+
+                        <div>
+
+                            <NavLink to="/about">
+                                <button className="aboutUs-btn">ABOUT US</button>
+                            </NavLink>
+
+                        </div>
+
+                    </div>
+
+                    <div className="navbar-user">
 
                         {isLoggedIn && (
-                            <NavLink to="/createClass">
-                                <button className="createClass-btn">CREATE CLASS</button>
-                            </NavLink>
+                            <>
+                                <h4>{user && user.name}</h4>
+                                <button className="logout-btn" onClick={logOutUser}>Logout</button>
+                            </>
                         )}
 
+                        {!isLoggedIn && (
+                            <>
+                                <Link to="/login"> <button className="login-btn">Login</button> </Link>
+                                <Link to="/signup"> <button className="signup-btn">Sign Up</button> </Link>
+                            </>
+                        )}
                     </div>
-
-                    <div>
-
-                        <NavLink to="/about">
-                            <button className="aboutUs-btn">ABOUT US</button>
-                        </NavLink>
-
-                    </div>
-
-                </div>
-
-                <div className="navbar-user">
-
-                    {isLoggedIn && (
-                        <>
-                            <h4>{user && user.name}</h4>
-                            <button className="logout-btn" onClick={logOutUser}>Logout</button>
-                        </>
-                    )}
-
-                    {!isLoggedIn && (
-                        <>
-                            <Link to="/login"> <button className="login-btn">Login</button> </Link>
-                            <Link to="/signup"> <button className="signup-btn">Sign Up</button> </Link>
-                        </>
-                    )}
-                </div>
-
             </nav>
         </div>
     );
