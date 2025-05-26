@@ -450,3 +450,20 @@ h3 {
     text-align: center;
     font-size: 16px;
 }
+
+.page-details{
+    text-align: center;
+    margin: 1rem;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-details:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.page-details img{
+    width: 500px;
+    height: auto;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import service from "../services/src/services/file-upload.service"
 
 function CreateReviews() {
     const { classId } = useParams();
@@ -8,21 +9,42 @@ function CreateReviews() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [ranking, setRanking] = useState("");
+    const [image, setImage] = useState("")
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     const navigate = useNavigate();
 
+    const handleFileUpload = (e) => {
+        // console.log("The file to be uploaded is: ", e.target.files[0]);
+
+        const uploadData = new FormData();
+
+        // imageUrl => this name has to be the same as in the model since we pass
+        // req.body to .create() method when creating a new movie in '/api/movies' POST route
+        uploadData.append("image", e.target.files[0]);
+
+        service
+            .uploadImage(uploadData)
+            .then(response => {
+                // console.log("response is: ", response);
+                // response carries "fileUrl" which we can use to update the state
+                setImage(response.fileUrl);
+            })
+            .catch(err => console.log("Error while uploading the file: ", err));
+    };
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
-        setError(null); 
+        setError(null);
 
         const reviewData = {
             title,
             description,
-            ranking: Number(ranking), 
+            ranking: Number(ranking),
+            image,
         };
 
         const storedToken = localStorage.getItem("authToken");
@@ -35,7 +57,8 @@ function CreateReviews() {
                 setTitle("");
                 setDescription("");
                 setRanking("");
-                navigate(`/class/${classId}`); 
+                setImage("")
+                navigate(`/class/${classId}`);
             })
             .catch((error) => {
                 console.log("Error loading review data", error);
@@ -77,6 +100,8 @@ function CreateReviews() {
                 value={ranking}
                 onChange={(e) => setRanking(e.target.value)}
             />
+
+            <input type="file" onChange={(e) => handleFileUpload(e)} />
 
             <button type="submit" disabled={loading}>
                 {loading ? "Submitting..." : "Upload review"}

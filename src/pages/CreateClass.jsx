@@ -63,7 +63,7 @@ function CreateClass() {
 
             <div>
                 <label>Image URL:</label>
-                <input value={image} onChange={(e) => setImage(e.target.value)} required />
+                <input type="url" value={image} onChange={(e) => setImage(e.target.value)} required />
             </div>
 
             <div>
