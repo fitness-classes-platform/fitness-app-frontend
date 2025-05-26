@@ -9,7 +9,7 @@ function CreateReviews() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [ranking, setRanking] = useState("");
-    const [image, setImage] = useState("")
+    const [image, setImage] = useState(null)
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -24,14 +24,15 @@ function CreateReviews() {
         // req.body to .create() method when creating a new movie in '/api/movies' POST route
         uploadData.append("image", e.target.files[0]);
 
+        setLoading(true);
+
         service
             .uploadImage(uploadData)
             .then(response => {
-                // console.log("response is: ", response);
-                // response carries "fileUrl" which we can use to update the state
                 setImage(response.fileUrl);
             })
-            .catch(err => console.log("Error while uploading the file: ", err));
+            .catch(err => console.log("Error while uploading the file: ", err))
+            .finally(() => setLoading(false));
     };
 
 
@@ -103,9 +104,11 @@ function CreateReviews() {
 
             <input type="file" onChange={(e) => handleFileUpload(e)} />
 
-            <button type="submit" disabled={loading}>
-                {loading ? "Submitting..." : "Upload review"}
-            </button>
+            {image && (
+                <button type="submit" disabled={loading}>
+                    {loading ? "Submitting..." : "Upload review"}
+                </button>
+            )}
         </form>
     );
 }

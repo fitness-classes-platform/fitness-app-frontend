@@ -19,9 +19,13 @@ const getReviews = () => {
 };
 
 const uploadImage = (file) => {
-  return api.post("/upload", file)
-    .then(res => res.data)
-    .catch(errorHandler);
+  return api.post("/upload", file, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  })
+  .then(res => res.data)
+  .catch(errorHandler);
 };
 
 const createReview = (newReview) => {
