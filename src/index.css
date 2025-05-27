@@ -2,484 +2,646 @@
 @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
 
 h1 {
-    font-size: 2.5rem;
-    color: black;
-    text-align: center;
+  font-size: 2.5rem;
+  color: black;
+  text-align: center;
 }
 
 h2 {
-    color: black;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 1.7rem;
+  color: black;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.7rem;
 }
 
 h3 {
-    color: #696969;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 1.1rem;
+  color: #696969;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.1rem;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #fff;
-    border-bottom: 1px solid #eaeaea;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    font-family: "Martian Mono", monospace;
-  }
-  
-  .navbar-left,
-  .navbar-center,
-  .navbar-user {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-left {
-    flex: 1;
-    justify-content: flex-start;
-  }
-  
-  .navbar-left img {
-    width: 60px;
-  }
-  
-  .navbar-center {
-    flex: 0;
-    justify-content: center;
-    gap: 6rem; 
-    text-align: center;
-  }
-  
-  .navbar-user {
-    flex: 1;
-    justify-content: flex-end;
-    gap: 0.75rem; 
-  }
-  
-  .navbar-user h4 {
-    font-size: 1rem; 
-    margin: 0;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: "Martian Mono", monospace;
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-user {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.navbar-left img {
+  width: 60px;
+}
+
+.navbar-center {
+  flex: 0;
+  justify-content: center;
+  gap: 6rem;
+  text-align: center;
+}
+
+.navbar-user {
+  flex: 1;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.navbar-user h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
 
 .btn {
-    padding: 0.4rem 0.8rem;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-family: "Open Sans", sans-serif;
-    font-size: 15px;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    transition: background-color 0.2s;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s;
 }
 
 
 .home-btn,
 .aboutUs-btn,
 .createClass-btn {
-    text-align: center;
-    border: none;
-    font-size: 13px;
-    cursor: pointer;
-    background: transparent;
-    width: 100px;
-    padding: 0.3rem;
-    border: none;
-    border-radius: 5px;
+  text-align: center;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  background: transparent;
+  width: 100px;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
 }
 
 .home-btn:hover,
 .aboutUs-btn:hover,
 .createClass-btn:hover {
-    background-color: #6366f1;
-    color: white;
+  background-color: #6366f1;
+  color: white;
 }
 
 
 .login-btn,
 .signup-btn,
 .logout-btn {
-    background-color: transparent;
-    color: #6366f1;
-    border: 1px solid #6366f1;
-    text-align: center;
-    padding: 0.3rem;
-    border: none;
-    border-radius: 5px;
-    font-family: "Open Sans", sans-serif;
-    font-size: 15px;
-    cursor: pointer;
-    width: 90px;
+  background-color: transparent;
+  color: #6366f1;
+  border: 1px solid #6366f1;
+  text-align: center;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  width: 90px;
 }
 
 .login-btn:hover,
 .signup-btn:hover,
 .logout-btn:hover {
-    background-color: #6366f1;
-    color: white;
+  background-color: #6366f1;
+  color: white;
 }
 
-.signup, .signin {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-  }
-  
-  .signupPage {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30vw;
-  }
-  
-  .signupPage h1 {
-    text-align: center;
-    font-family: "Martian Mono", monospace;
-    font-size: 40px;
-    background-color: rgb(255, 230, 0);
-  }
-  
-  .signupPageForm {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    font-family: "Open Sans", sans-serif;
-    font-size: 18px;
-  }
-  
-  .signupPage label {
-    margin: 15px 0 5px;
-    font-weight: bold;
-  }
-  
-  .signupPage input {
-    text-align: center;
-    font-size: 14px;
-    border: 1px solid black;
-    border-radius: 2px;
-    background-color: aliceblue;
-    width: 250px;
-    height: 25px;
-    box-sizing: border-box;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-  }
-  
-  .signupPage button,
-  .signupPageLink {
-    all: unset;
-    display: inline-block;
-    text-align: center;
-    padding: 0.3rem;
-    border-radius: 5px;
-    color: white;
-    font-family: "Open Sans", sans-serif;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .signupPage button {
-    background-color: rgb(255, 94, 0);
-    width: 130px;
-    font-size: 16px;
-    margin-top: 18px;
-  }
-  
-  .signupPage button:hover {
-    background-color: rgb(220, 80, 0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .signupPageLink {
-    background-color: rgb(0, 143, 19);
-    width: 70px;
-    margin-top: 5px;
-    font-size: 14px;
-  }
-  
-  .signupPageLink:hover {
-    background-color: rgb(0, 120, 0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .signupPage p {
-    margin-top: 50px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: bold;
-  }
-  
-  .signupPage ul {
-    list-style: none;
-    font-size: 11px;
-    color: rgb(65, 65, 65);
-    margin-top: 5px;
-    padding-left: 0;
-  }
-  
+.signup,
+.signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
 
-  .loginPage {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30vw;
-  }
-  
-  .loginPage h1 {
-    text-align: center;
-    font-family: "Martian Mono", monospace;
-    font-size: 40px;
-    background-color: rgb(255, 230, 0);
-  }
-  
-  .loginPageForm {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    font-family: "Open Sans", sans-serif;
-    font-size: 18px;
-  }
-  
-  .loginPage label {
-    margin: 15px 0 5px
-  }  
+.signupPage {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+}
+
+.signupPage h1 {
+  text-align: center;
+  font-family: "Martian Mono", monospace;
+  font-size: 40px;
+  background-color: rgb(255, 230, 0);
+}
+
+.signupPageForm {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+.signupPage label {
+  margin: 15px 0 5px;
+  font-weight: bold;
+}
+
+.signupPage input {
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: aliceblue;
+  width: 250px;
+  height: 25px;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.signupPage button,
+.signupPageLink {
+  all: unset;
+  display: inline-block;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 5px;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signupPage button {
+  background-color: rgb(255, 94, 0);
+  width: 130px;
+  font-size: 16px;
+  margin-top: 18px;
+}
+
+.signupPage button:hover {
+  background-color: rgb(220, 80, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.signupPageLink {
+  background-color: rgb(0, 143, 19);
+  width: 70px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.signupPageLink:hover {
+  background-color: rgb(0, 120, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.signupPage p {
+  margin-top: 50px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+.signupPage ul {
+  list-style: none;
+  font-size: 11px;
+  color: rgb(65, 65, 65);
+  margin-top: 5px;
+  padding-left: 0;
+}
+
+
+.loginPage {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+}
+
+.loginPage input {
+  text-align: center;
+}
+
+.loginPage h1 {
+  text-align: center;
+  font-family: "Martian Mono", monospace;
+  font-size: 40px;
+  background-color: rgb(255, 230, 0);
+}
+
+.loginPageForm {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+.loginPage label {
+  margin: 15px 0 5px
+}
 
 .loginPage p {
-    margin-top: 50px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: bold;
+  margin-top: 50px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
 }
 
 .loginPageLink {
-    all: unset;
-    text-align: center;
-    padding: 0.3rem;
-    background-color: rgb(255, 94, 0);
-    width: 70px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 5px;
-    color: white;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    cursor: pointer;
+  all: unset;
+  text-align: center;
+  padding: 0.3rem;
+  background-color: rgb(255, 94, 0);
+  width: 70px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.loginPage button {
+  margin-top: 10px;
+  background-color: transparent;
+  color: #6366f1;
+  border: 1px solid #6366f1;
+  text-align: center;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  width: 90px;
+}
+
+.loginPage button:hover {
+  background-color: #6366f1;
+  color: white;
 }
 
 .loginPageLink:hover {
-    background-color: rgb(220, 80, 0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgb(220, 80, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .error-message {
-    color: red;
+  color: red;
 }
 
 .homePage {
-    display: flex;
-    height: 100vh;
-    background-color: #fff;
+  display: flex;
+  height: 100vh;
+  background-color: #fff;
 }
 
 .homePage h1 {
-    margin-top: 1rem;
-
+  margin-top: 1rem;
 }
 
 
 .homePage-card {
-    width: 100%;
-    overflow-y: scroll;
-    padding: 1rem;
-    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+  width: 100%;
+  overflow-y: scroll;
+  padding: 1rem;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 .homePage-card:hover {
-    background-color: #fff0f0;
-    transform: scale(1.05);
+  background-color: #fff0f0;
+  transform: scale(1.05);
 }
 
 
 .homePage-card p {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 15px;
-    color: #585858;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #585858;
 }
 
 .fitness-card {
-    display: flex;
-    margin-bottom: 1rem;
-    background: #fafafa;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+  display: flex;
+  margin-bottom: 1rem;
+  background: #fafafa;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
 
 .fitness-card img {
-    width: 120px;
-    height: 100%;
-    object-fit: cover;
+  width: 120px;
+  height: 100%;
+  object-fit: cover;
 }
 
 
 
 .fitness-card .desc {
-    font-size: 0.9rem;
-    color: #555;
+  font-size: 0.9rem;
+  color: #555;
 }
 
 .fitness-card p {
-    padding: 20px;
-    ;
-
-
+  padding: 20px;
 }
 
 
 .details-btn {
-    text-decoration: none;
-    background-color: #9900ad;
-    color: rgb(255, 255, 255);
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: none;
-    font-weight: 500;
-    font-size: 0.8rem;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    transition: background-color 0.2s;
-    margin: 10px;
-    width: 100px;
-    font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  background-color: #9900ad;
+  color: rgb(255, 255, 255);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  font-size: 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s;
+  margin: 10px;
+  width: 100px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .delete-btn {
-    text-decoration: none;
-    background-color: #ff0000;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: none;
-    font-weight: 500;
-    font-size: 0.7rem;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    transition: background-color 0.2s;
-    margin: 10px;
-    width: 70px;
-    font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  background-color: #ff0000;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  font-size: 0.7rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s;
+  margin: 10px;
+  width: 70px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .classes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
 }
 
 
 .searchBar-bar {
-    width: 450px;
-    height: 40px;
-    font-size: 18px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 1px solid grey;
-    margin-bottom: 1rem;
+  width: 450px;
+  height: 40px;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid grey;
+  margin-bottom: 1rem;
 
 }
 
+.page-details-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-details-section h1 {
+  color: #6366f1;
+  font-family: "Martian Mono", monospace;
+  font-size: 60px;
+  margin-top: 15px;
+}
+
+.page-details-section h3 {
+  color: #f17863;
+  font-family: "Martian Mono", monospace;
+  font-size: 30px;
+  margin-top: 15px;
+  text-align: center;
+}
 
 .page-details {
-    text-align: center;
-    margin: 1rem;
-    padding: 2rem;
-    font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.page-details:hover {
-    background-color: #fffaf0;
-    transition: background-color 0.3s ease;
-
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
 }
 
 .page-details img {
-    width: 500px;
-    height: auto;
+  width: 500px;
+  height: auto;
+}
+
+.page-details-info {
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Open Sans", sans-serif;
+  background-color: #ebebeb;
+  padding: 2rem;
+  border-radius: 12px
+}
+
+.review-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-details h3 {
+  margin-top: 20px;
+}
+
+
+.review-info {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 12px;
+  width: 500px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-info h4 {
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.review-info p {
+  text-align: center;
+}
+
+.review-info h5 {
+  font-size: 25px;
+  color: #9900ad;
+}
+
+.review-info img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.review-info-edit-btn {
+  all: unset;
+  text-align: center;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  background: rgb(255, 185, 92);
+  width: 80px;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.review-info-delete-btn {
+  all: unset;
+  text-align: center;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+  background: rgb(255, 116, 92);
+  width: 70px;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.review-details-btns {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+  gap: 20px;
+  align-items: center;
+}
+
+.review-details-btns-review {
+  all: unset;
+  text-align: center;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  background: rgb(68, 255, 99);
+  width: 200px;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.review-details-btns-edit {
+  all: unset;
+  text-align: center;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  background: rgb(107, 0, 98);
+  width: 100px;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+.review-details-btns p {
+  font-family: "Open Sans", sans-serif;
 }
 
 .footer {
-    background-color: #F9F7F7;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid #ddd;
-    margin-top: 2rem;
+  background-color: #F9F7F7;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ddd;
+  margin-top: 2rem;
 }
 
 .footer-links {
-    display: flex;
-    gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
-
-
-
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 
-    .homePage {
-        flex-direction: column;
-        height: auto;
-    }
+  .homePage {
+    flex-direction: column;
+    height: auto;
+  }
 
-    .homePage-card {
-        width: 90%;
-    }
+  .homePage-card {
+    width: 90%;
+  }
 
-    .signupPage,
-    .loginPage {
-        width: 90vw;
-    }
+  .signupPage,
+  .loginPage {
+    width: 90vw;
+  }
 
-    .page-details img {
-        width: 90%;
-    }
+  .page-details img {
+    width: 90%;
+  }
 }

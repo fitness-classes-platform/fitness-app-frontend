@@ -69,51 +69,63 @@ function ClassDetails() {
 
     return (
         <div>
-            <section className="page-details">
-                <img src={classData.image} alt={classData.name} />
+            <section className="page-details-section">
                 <h1>{classData.name}</h1>
-                <h2>{classData.location}</h2>
-                <p>{classData.schedule}</p>
-                <p>{classData.difficulty}</p>
-                <p>{classData.contacts}</p>
+                <div className="page-details">
+                    <div>
+                        <img src={classData.image} alt={classData.name} />
+                    </div>
+                    <div className="page-details-info">
+                        <h2>{classData.location}</h2>
+                        <p>📅 {classData.schedule}</p>
+                        <p>🏋️‍♀️ {classData.difficulty}</p>
+                        <p>📱 {classData.contacts}</p>
+                    </div>
+                </div>
+                <div className="review-details">
+                    <h3>Reviews</h3>
+                    {reviews.length === 0 ? (
+                        <p>No reviews yet for this class.</p>
+                    ) : (
+                        reviews.map((review) => (
+                            review && (
+                                <div key={review._id} className="review-info">
+                                    <h4>{review.title || "No Title"}</h4>
+                                    <p>{review.description || "No Description"}</p>
+                                    {review.image ? (
+                                        <img src={review.image} alt="Review" />
+                                    ) : (
+                                        <p>No image</p>
+                                    )}
 
-                <h3>Reviews:</h3>
-                {reviews.length === 0 ? (
-                    <p>No reviews yet for this class.</p>
+                                    <h5>{review.ranking ?? "No Ranking"} / 5</h5>
+                                    {isLoggedIn && review.author === currentUserId && (
+                                        <>
+                                            <Link to={`/review/${review._id}`} className="review-info-edit-btn"> Edit Review </Link>
+                                            <button onClick={() => handleDelete(review._id)} className="review-info-delete-btn">Delete</button>
+                                        </>
+                                    )}
+
+                                </div>
+
+                            )
+                        ))
+                    )}
+                </div>
+            <div className="review-details-btns">
+                {isLoggedIn ? (
+                    <>
+                        <Link to={`/createReviews/${classId}`} className="review-details-btns-review"> Give us your review of this class </Link>
+                        <Link to={`/class/edit/${classId}`} className="review-details-btns-edit"> Edit Class </Link>
+                    </>
                 ) : (
-                    reviews.map((review) => (
-                        review && (
-                            <div key={review._id}>
-                                <h3>{review.title || "No Title"}</h3>
-                                <p>{review.description || "No Description"}</p>
-                                {review.image ? (
-                                    <img src={review.image} alt="Review" style={{ maxWidth: '200px' }} />
-                                ) : (
-                                    <p>No image</p>
-                                )}
-
-                                <p>Ranking: {review.ranking ?? "No Ranking"}</p>
-                                {isLoggedIn && review.author === currentUserId && (
-                                    <>
-                                        <Link to={`/review/${review._id}`}> Edit Review </Link>
-                                        <button onClick={() => handleDelete(review._id)}>Delete Review</button>
-                                    </>
-                                )}
-                            </div>
-                        )
-                    ))
+                    <p>Please log in to edit or review this class</p>
                 )}
+            </div>
             </section>
-            {isLoggedIn ? (
-                <>
-                    <Link to={`/class/edit/${classId}`}> Edit Class </Link>
-                    <Link to={`/createReviews/${classId}`}> Give us your review of this class </Link>
-                </>
-            ) : (
-                <p>Please log in to edit or review this class.</p>
-            )}
         </div>
     );
+
 }
 
 export default ClassDetails;
