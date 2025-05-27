@@ -100,10 +100,14 @@ function ClassDetails() {
 
                                     <h5>{review.ranking ?? "No Ranking"} / 5</h5>
                                     {isLoggedIn && review.author === currentUserId && (
-                                        <>
-                                            <Link to={`/review/${review._id}`} className="review-info-edit-btn"> Edit Review </Link>
-                                            <button onClick={() => handleDelete(review._id)} className="review-info-delete-btn">Delete</button>
-                                        </>
+                                        <div className="edit-delete">
+                                            <Link to={`/review/${review._id}`} className="review-info-edit-btn">
+                                                <img src="https://i.imgur.com/urSPuAY.png" alt="Edit" />
+                                            </Link>
+                                            <button onClick={() => handleDelete(review._id)} className="review-info-delete-btn">
+                                                <img src="https://i.imgur.com/wORiqSE.png" alt="Remove" />
+                                            </button>
+                                        </div>
                                     )}
 
                                 </div>
