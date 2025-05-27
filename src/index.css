@@ -514,6 +514,27 @@ h3 {
 }
 
 
+.page-details-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-details-section h1 {
+  color: #6366f1;
+  font-family: "Martian Mono", monospace;
+  font-size: 60px;
+  margin-top: 15px;
+}
+
+.page-details-section h3 {
+  color: #f17863;
+  font-family: "Martian Mono", monospace;
+  font-size: 30px;
+  margin-top: 15px;
+  text-align: center;
+}
+
 .page-details {
   text-align: center;
   padding: 2rem;
@@ -528,6 +549,133 @@ h3 {
 .page-details img {
   width: 500px;
   height: auto;
+}
+
+.page-details-info {
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Open Sans", sans-serif;
+  background-color: #ebebeb;
+  padding: 2rem;
+  border-radius: 12px
+}
+
+.review-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-details h3 {
+  margin-top: 20px;
+}
+
+
+.review-info {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 12px;
+  width: 500px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-info h4 {
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.review-info p {
+  text-align: center;
+}
+
+.review-info h5 {
+  font-size: 25px;
+  color: #9900ad;
+}
+
+.review-info img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.review-info-edit-btn {
+  all: unset;
+  text-align: center;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  background: rgb(255, 185, 92);
+  width: 80px;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.review-info-delete-btn {
+  all: unset;
+  text-align: center;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+  background: rgb(255, 116, 92);
+  width: 70px;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.review-details-btns {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+  gap: 20px;
+  align-items: center;
+}
+
+.review-details-btns-review {
+  all: unset;
+  text-align: center;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  background: rgb(68, 255, 99);
+  width: 200px;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.review-details-btns-edit {
+  all: unset;
+  text-align: center;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  background: rgb(107, 0, 98);
+  width: 100px;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+.review-details-btns p {
+  font-family: "Open Sans", sans-serif;
 }
 
 .footer {
