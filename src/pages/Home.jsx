@@ -55,8 +55,11 @@ function HomePage({ onDeleteClass, classes }) {
                 {filteredData.map((item) => (
                     <div key={item._id} className="fitness-card">
                          <img src={item.image} />
+                         <div className="fitness-card-content"> 
+                            <div className="fitness-card-header">
                         <h2>{item.name}</h2>
                          <p>📍{item.location}</p> 
+                         </div>
                         <div className="buttons">
                             <Link to={`/class/${item._id}`} className="details-btn">
                                 More details
@@ -64,6 +67,7 @@ function HomePage({ onDeleteClass, classes }) {
                             {isLoggedIn && (
                                 <button onClick={() => handleDelete(item._id)} className="delete-btn">Delete</button>
                             )}
+                            </div>
                         </div>
                     </div>
                 ))}

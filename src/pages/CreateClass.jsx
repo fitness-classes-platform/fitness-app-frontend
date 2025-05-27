@@ -50,6 +50,7 @@ function CreateClass() {
     };
 
     return (
+        <div className="create-class-form">
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Name:</label>
@@ -91,6 +92,7 @@ function CreateClass() {
             </button>
 
         </form>
+        </div>
     );
 }
 
