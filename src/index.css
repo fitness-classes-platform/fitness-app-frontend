@@ -35,47 +35,52 @@ h3 {
 
 
 .navbar {
-    padding: 0.8rem;
-    background-color: rgb(216, 216, 216);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-
-}
-
-
-
-.navbar-left {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.navbar img {
-    width: 60px;
-}
-
-.navbar-center {
-    flex: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 150px;
-    text-align: center;
-}
-
-.navbar-user {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-}
-
-
-.navbar-user h4 {
-    font-size: 16px;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     font-family: "Martian Mono", monospace;
-}
+  }
+  
+  .navbar-left,
+  .navbar-center,
+  .navbar-user {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-left {
+    flex: 1;
+    justify-content: flex-start;
+  }
+  
+  .navbar-left img {
+    width: 60px;
+  }
+  
+  .navbar-center {
+    flex: 0;
+    justify-content: center;
+    gap: 6rem; 
+    text-align: center;
+  }
+  
+  .navbar-user {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 0.75rem; 
+  }
+  
+  .navbar-user h4 {
+    font-size: 1rem; 
+    margin: 0;
+  }
+  
 
 .btn {
     padding: 0.4rem 0.8rem;
@@ -90,105 +95,75 @@ h3 {
 }
 
 
-
-.logout-btn {
-    background-color: rgb(255, 0, 0);
-    text-align: center;
-    padding: 0.3rem;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-family: "Open Sans", sans-serif;
-    font-size: 13px;
-    cursor: pointer;
-}
-
-.logout-btn:hover {
-    background-color: rgb(235, 0, 0);
-}
-
 .home-btn,
-.aboutUs-btn {
+.aboutUs-btn,
+.createClass-btn {
     text-align: center;
     border: none;
-    font-family: "Poetsen One", sans-serif;
-    font-size: 22px;
+    font-size: 13px;
     cursor: pointer;
     background: transparent;
     width: 100px;
-}
-
-.createClass-btn {
-    background-color: rgb(16, 141, 0);
-    text-align: center;
-    padding: 0.5rem;
+    padding: 0.3rem;
     border: none;
     border-radius: 5px;
-    color: white;
-    font-family: "Poetsen One", sans-serif;
-    font-size: 20px;
-    cursor: pointer;
-    width: 150px;
 }
 
-.signup-btn {
-    background-color: rgb(255, 94, 0);
+.home-btn:hover,
+.aboutUs-btn:hover,
+.createClass-btn:hover {
+    background-color: #6366f1;
+    color: white;
+}
+
+
+.login-btn,
+.signup-btn,
+.logout-btn {
+    background-color: transparent;
+    color: #6366f1;
+    border: 1px solid #6366f1;
     text-align: center;
     padding: 0.3rem;
     border: none;
     border-radius: 5px;
-    color: white;
     font-family: "Open Sans", sans-serif;
     font-size: 15px;
     cursor: pointer;
     width: 90px;
 }
 
-.signup-btn:hover {
-    background-color: rgb(220, 80, 0);
-}
-
-.login-btn {
-    background-color: rgb(0, 143, 19);
-    text-align: center;
-    padding: 0.3rem;
-    border: none;
-    border-radius: 5px;
+.login-btn:hover,
+.signup-btn:hover,
+.logout-btn:hover {
+    background-color: #6366f1;
     color: white;
-    font-family: "Open Sans", sans-serif;
-    font-size: 15px;
-    cursor: pointer;
-    width: 90px;
 }
 
-.login-btn:hover {
-    background-color: rgb(0, 120, 19);
-}
-
-.signup {
+.signup, .signin {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem;
-}
-
-.signupPage {
+  }
+  
+  .signupPage {
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 30vw;
-}
-
-.signupPage h1 {
+  }
+  
+  .signupPage h1 {
     text-align: center;
     font-family: "Martian Mono", monospace;
     font-size: 40px;
     background-color: rgb(255, 230, 0);
-}
-
-.signupPageForm {
+  }
+  
+  .signupPageForm {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
@@ -196,103 +171,97 @@ h3 {
     align-items: center;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
-}
-
-.signupPage label {
-    margin-bottom: 5px;
-    margin-top: 15px;
+  }
+  
+  .signupPage label {
+    margin: 15px 0 5px;
     font-weight: bold;
-}
-
-.signupPage input {
+  }
+  
+  .signupPage input {
     text-align: center;
     font-size: 14px;
-    border: none;
-    border-radius: 2px;
     border: 1px solid black;
+    border-radius: 2px;
     background-color: aliceblue;
     width: 250px;
     height: 25px;
     box-sizing: border-box;
-}
-
-.signupPage button {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+  }
+  
+  .signupPage button,
+  .signupPageLink {
+    all: unset;
+    display: inline-block;
     text-align: center;
     padding: 0.3rem;
-    background-color: rgb(255, 94, 0);
-    width: 130px;
-    border: none;
     border-radius: 5px;
-    margin-top: 18px;
     color: white;
     font-family: "Open Sans", sans-serif;
-    font-size: 16px;
     cursor: pointer;
-}
-
-.signupPage button:hover {
+    user-select: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .signupPage button {
+    background-color: rgb(255, 94, 0);
+    width: 130px;
+    font-size: 16px;
+    margin-top: 18px;
+  }
+  
+  .signupPage button:hover {
     background-color: rgb(220, 80, 0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.signupPage p {
+  }
+  
+  .signupPageLink {
+    background-color: rgb(0, 143, 19);
+    width: 70px;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .signupPageLink:hover {
+    background-color: rgb(0, 120, 0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .signupPage p {
     margin-top: 50px;
     font-family: "Open Sans", sans-serif;
     font-weight: bold;
-}
-
-.signupPageLink {
-    all: unset;
-    text-align: center;
-    padding: 0.3rem;
-    background-color: rgb(0, 143, 19);
-    width: 70px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 5px;
-    color: white;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.signupPageLink:hover {
-    background-color: rgb(0, 120, 0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.signupPage ul {
+  }
+  
+  .signupPage ul {
     list-style: none;
     font-size: 11px;
     color: rgb(65, 65, 65);
     margin-top: 5px;
     padding-left: 0;
-}
+  }
+  
 
-.signin {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-}
-
-.loginPage {
+  .loginPage {
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 30vw;
-}
-
-.loginPage h1 {
+  }
+  
+  .loginPage h1 {
     text-align: center;
     font-family: "Martian Mono", monospace;
     font-size: 40px;
     background-color: rgb(255, 230, 0);
-}
-
-.loginPageForm {
+  }
+  
+  .loginPageForm {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
@@ -300,44 +269,11 @@ h3 {
     align-items: center;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
-}
-
-.loginPage label {
-    margin-bottom: 5px;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-.loginPage input {
-    text-align: center;
-    font-size: 14px;
-    border: none;
-    border-radius: 2px;
-    border: 1px solid black;
-    background-color: aliceblue;
-    width: 250px;
-    height: 25px;
-    box-sizing: border-box;
-}
-
-.loginPage button {
-    text-align: center;
-    padding: 0.3rem;
-    background-color: rgb(0, 143, 19);
-    width: 100px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 18px;
-    color: white;
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.loginPage button:hover {
-    background-color: rgb(0, 120, 0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+  }
+  
+  .loginPage label {
+    margin: 15px 0 5px
+  }  
 
 .loginPage p {
     margin-top: 50px;
@@ -382,7 +318,7 @@ h3 {
 
 
 .homePage-card {
-    width: 50%;
+    width: 100%;
     overflow-y: scroll;
     padding: 1rem;
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
@@ -394,12 +330,6 @@ h3 {
     transform: scale(1.05);
 }
 
-.homePage-card img {
-    width: 400px;
-    height: 280px;
-    border-radius: 8px;
-
-}
 
 .homePage-card p {
     font-family: 'Segoe UI', sans-serif;
@@ -430,21 +360,12 @@ h3 {
     color: #555;
 }
 
-.fitness-card p{
+.fitness-card p {
     padding: 20px;
-;
+    ;
 
 
 }
-
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
 
 
 .details-btn {
@@ -488,18 +409,6 @@ h3 {
     gap: 50px;
 }
 
-.home-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.home-page h1 {
-    color: #000000;
-    font-family: "Rowdies", sans-serif;
-    padding: 0.5rem;
-}
 
 .searchBar-bar {
     width: 450px;
@@ -509,7 +418,7 @@ h3 {
     border-radius: 8px;
     border: 1px solid grey;
     margin-bottom: 1rem;
-    
+
 }
 
 
@@ -530,6 +439,20 @@ h3 {
 .page-details img {
     width: 500px;
     height: auto;
+}
+
+.footer {
+    background-color: #F9F7F7;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ddd;
+    margin-top: 2rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
 }
 
 
