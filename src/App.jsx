@@ -84,8 +84,8 @@ function App() {
         />
         <Route path="/createReviews/:classId" element={<CreateReviews />} />
         <Route path="/review/:reviewId" element={<EditReview />} />
-        <Route path="/footer" element={<Footer />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

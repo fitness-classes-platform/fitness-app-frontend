@@ -17,13 +17,13 @@ h1 {
 
 h2 {
     color: black;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 1.7rem;
 }
 
 h3 {
     color: #696969;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 1.1rem;
 }
 
@@ -44,7 +44,7 @@ h3 {
     position: sticky;
     top: 0;
     z-index: 1000;
-    font-family: "Martian Mono", monospace;
+    font-family: "Inter", sans-serif;
   }
   
   .navbar-left,
@@ -500,6 +500,28 @@ h3 {
 .page-details img {
     width: 500px;
     height: auto;
+}
+
+
+.about-section {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 80vh;
+}
+
+.about-section h1 {
+    color: #8a2be2;
+    margin-bottom: 40px;
+}
+
+.about-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: #1a1a1a;
 }
 
 .footer {
