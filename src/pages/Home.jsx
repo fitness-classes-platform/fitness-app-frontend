@@ -47,16 +47,16 @@ function HomePage({ onDeleteClass, classes }) {
     );
 
     return (
-        <div className="home-page">
-            <h1>CLASSES</h1>
+        <div className="container">
             <SearchBar onSearch={handleSearch} />
-            <div className="classes">
+            <section className="homePage">
+            <div className="homePage-card">
                 {error && <p style={{ color: "red" }}>{error}</p>}
                 {filteredData.map((item) => (
-                    <div key={item._id} className="homePage-card">
+                    <div key={item._id} className="fitness-card">
+                         <img src={item.image} />
                         <h2>{item.name}</h2>
-                        <p>📍<br />{item.location}</p>
-                        <img src={item.image} />
+                         <p>📍{item.location}</p> 
                         <div className="buttons">
                             <Link to={`/class/${item._id}`} className="details-btn">
                                 More details
@@ -68,6 +68,7 @@ function HomePage({ onDeleteClass, classes }) {
                     </div>
                 ))}
             </div>
+            </section>
         </div>
     );
 }

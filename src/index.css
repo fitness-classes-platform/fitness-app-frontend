@@ -7,9 +7,7 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #f2ffbf;
-}
+
 
 h1 {
     font-size: 2.5rem;
@@ -29,18 +27,27 @@ h3 {
     font-size: 1.1rem;
 }
 
-
-.navbar {
-  padding: 0.8rem;
-  background-color: rgb(216, 216, 216);
-  display: flex;
-  align-items: center;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
+
+.navbar {
+    padding: 0.8rem;
+    background-color: rgb(216, 216, 216);
+    display: flex;
+    align-items: center;
+
+}
+
+
+
 .navbar-left {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .navbar img {
@@ -48,20 +55,20 @@ h3 {
 }
 
 .navbar-center {
-  flex: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 150px;
-  text-align: center;
+    flex: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    text-align: center;
 }
 
 .navbar-user {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 10px;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
 }
 
 
@@ -69,6 +76,20 @@ h3 {
     font-size: 16px;
     font-family: "Martian Mono", monospace;
 }
+
+.btn {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s;
+}
+
+
 
 .logout-btn {
     background-color: rgb(255, 0, 0);
@@ -350,24 +371,22 @@ h3 {
 
 .homePage {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 2.5rem;
+    height: 100vh;
+    background-color: #fff;
 }
 
+.homePage h1 {
+    margin-top: 1rem;
+
+}
+
+
 .homePage-card {
+    width: 50%;
+    overflow-y: scroll;
     padding: 1rem;
-    text-align: center;
-    border-radius: 1rem;
-    color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin: 30px 20px;
-    background-color: #fff4f4;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 .homePage-card:hover {
@@ -378,6 +397,8 @@ h3 {
 .homePage-card img {
     width: 400px;
     height: 280px;
+    border-radius: 8px;
+
 }
 
 .homePage-card p {
@@ -386,12 +407,45 @@ h3 {
     color: #585858;
 }
 
+.fitness-card {
+    display: flex;
+    margin-bottom: 1rem;
+    background: #fafafa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.fitness-card img {
+    width: 120px;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.fitness-card .desc {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.fitness-card p{
+    padding: 20px;
+;
+
+
+}
+
+
 .buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
+
+
 
 .details-btn {
     text-decoration: none;
@@ -405,7 +459,7 @@ h3 {
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     transition: background-color 0.2s;
-    margin: 10px 10px 10px 10px;
+    margin: 10px;
     width: 100px;
     font-family: "Open Sans", sans-serif;
 }
@@ -440,6 +494,7 @@ h3 {
     align-items: center;
     gap: 20px;
 }
+
 .home-page h1 {
     color: #000000;
     font-family: "Rowdies", sans-serif;
@@ -447,11 +502,18 @@ h3 {
 }
 
 .searchBar-bar {
-    text-align: center;
-    font-size: 16px;
+    width: 450px;
+    height: 40px;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid grey;
+    margin-bottom: 1rem;
+    
 }
 
-.page-details{
+
+.page-details {
     text-align: center;
     margin: 1rem;
     padding: 2rem;
@@ -460,10 +522,41 @@ h3 {
 }
 
 .page-details:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #fffaf0;
+    transition: background-color 0.3s ease;
+
 }
 
-.page-details img{
+.page-details img {
     width: 500px;
     height: auto;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .homePage {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .homePage-card {
+        width: 90%;
+    }
+
+    .signupPage,
+    .loginPage {
+        width: 90vw;
+    }
+
+    .page-details img {
+        width: 90%;
+    }
 }

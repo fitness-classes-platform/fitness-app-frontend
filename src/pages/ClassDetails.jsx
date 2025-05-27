@@ -50,14 +50,14 @@ function ClassDetails() {
     }, [classId]);
 
 
-   /* useEffect(() => {
-        service.getReviews()
-            .then((data) => {
-                // console.log("data", data);
-                setReviews(data);
-            })
-            .catch((err) => console.log(err));
-    }, []); //  <-- This effect will run only once, after the initial render*/
+    /* useEffect(() => {
+         service.getReviews()
+             .then((data) => {
+                 // console.log("data", data);
+                 setReviews(data);
+             })
+             .catch((err) => console.log(err));
+     }, []); //  <-- This effect will run only once, after the initial render*/
 
     if (error) {
         return <p style={{ color: "red" }}>{error}</p>;
@@ -70,9 +70,9 @@ function ClassDetails() {
     return (
         <div>
             <section className="page-details">
+                <img src={classData.image} alt={classData.name} />
                 <h1>{classData.name}</h1>
                 <h2>{classData.location}</h2>
-                <img src={classData.image} alt={classData.name} />
                 <p>{classData.schedule}</p>
                 <p>{classData.difficulty}</p>
                 <p>{classData.contacts}</p>
@@ -86,7 +86,7 @@ function ClassDetails() {
                             <div key={review._id}>
                                 <h3>{review.title || "No Title"}</h3>
                                 <p>{review.description || "No Description"}</p>
-                               {review.image ? (
+                                {review.image ? (
                                     <img src={review.image} alt="Review" style={{ maxWidth: '200px' }} />
                                 ) : (
                                     <p>No image</p>
