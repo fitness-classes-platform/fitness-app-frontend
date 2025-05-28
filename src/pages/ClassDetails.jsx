@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";                     // <== IMPORT 
 import { AuthContext } from "../context/auth.context";  // <== IMPORT
-import service from "../services/src/services/file-upload.service"
+import service from "../services/file-upload.service"
 
 function ClassDetails() {
     const { classId } = useParams();

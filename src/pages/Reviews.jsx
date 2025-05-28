@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import service from "../services/src/services/file-upload.service"
+import service from "../services/file-upload.service"
 
 function CreateReviews() {
     const { classId } = useParams();
