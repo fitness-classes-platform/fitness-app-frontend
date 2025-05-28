@@ -79,13 +79,22 @@ function ClassDetails() {
                         <h2>{classData.location}</h2>
                         <p>📅 {classData.schedule}</p>
                         <p>🏋️‍♀️ {classData.difficulty}</p>
-                        <p>📱 {classData.contacts}</p>
+                        <p>
+                            {classData.contacts?.trim() ? (
+                                <>
+                                    📱 {classData.contacts.trim()}
+                                </>
+                            ) : (
+                                "No contact information"
+                            )}
+                        </p>
+
                     </div>
                 </div>
                 <div className="review-details">
                     <h3>Reviews</h3>
                     {reviews.length === 0 ? (
-                        <p>No reviews yet for this class.</p>
+                        <p>No reviews yet for this class</p>
                     ) : (
                         reviews.map((review) => (
                             review && (
@@ -116,16 +125,16 @@ function ClassDetails() {
                         ))
                     )}
                 </div>
-            <div className="review-details-btns">
-                {isLoggedIn ? (
-                    <>
-                        <Link to={`/createReviews/${classId}`} className="review-details-btns-review"> Give us your review of this class </Link>
-                        <Link to={`/class/edit/${classId}`} className="review-details-btns-edit"> Edit Class </Link>
-                    </>
-                ) : (
-                    <p>Please log in to edit or review this class</p>
-                )}
-            </div>
+                <div className="review-details-btns">
+                    {isLoggedIn ? (
+                        <>
+                            <Link to={`/createReviews/${classId}`} className="review-details-btns-review"> Give us your review of this class </Link>
+                            <Link to={`/class/edit/${classId}`} className="review-details-btns-edit"> Edit Class </Link>
+                        </>
+                    ) : (
+                        <p>Please log in to edit or review this class</p>
+                    )}
+                </div>
             </section>
         </div>
     );

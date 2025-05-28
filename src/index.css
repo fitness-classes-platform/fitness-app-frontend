@@ -273,6 +273,11 @@ h3 {
     align-items: center;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
+    text-align: center;
+  }
+
+  .loginPageForm input {
+    text-align: center;
   }
   
   .loginPage label {
@@ -568,10 +573,13 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
+  font-family: "Open Sans", sans-serif;
 }
 
 .review-details h3 {
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 
@@ -598,8 +606,9 @@ h3 {
 }
 
 .review-info h5 {
-  font-size: 25px;
+  font-size: 30px;
   color: #9900ad;
+  margin-top: 10px;
 }
 
 .review-info img {
@@ -688,6 +697,7 @@ h3 {
 .footer-links {
   display: flex;
   gap: 1.5rem;
+  font-family: "Open Sans", sans-serif;
 }
 
 @media (max-width: 768px) {

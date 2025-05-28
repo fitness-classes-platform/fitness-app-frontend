@@ -77,7 +77,7 @@ function CreateReviews() {
             <input
                 type="text"
                 name="Title"
-                placeholder="Name of the class"
+                placeholder="Review Title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
             />
