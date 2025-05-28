@@ -72,45 +72,45 @@ function CreateReviews() {
 
     return (
         <div className="create-reviews-form">
-        <form onSubmit={handleSubmit}>
-            {error && <p style={{ color: "red" }}>{error}</p>}
-            <label>Title:</label>
-            <input
-                type="text"
-                name="Title"
-                placeholder="What do you want to call this review"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-            />
+            <form onSubmit={handleSubmit}>
+                {error && <p style={{ color: "red" }}>{error}</p>}
+                <label>Title:</label>
+                <input
+                    type="text"
+                    name="Title"
+                    placeholder="What do you want to call this review"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                />
 
-            <label>Description:</label>
-            <input
-                type="text"
-                name="Description"
-                placeholder="Give us your best description for this class"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-            />
+                <label>Description:</label>
+                <input
+                    type="text"
+                    name="Description"
+                    placeholder="Give us your best description for this class"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                />
 
-            <label>Ranking:</label>
-            <input
-                type="number"
-                name="Ranking"
-                placeholder="Give us your ranking from 1 to 5"
-                min="0"
-                max="5"
-                value={ranking}
-                onChange={(e) => setRanking(e.target.value)}
-            />
+                <label>Ranking:</label>
+                <input
+                    type="number"
+                    name="Ranking"
+                    placeholder="Give us your ranking from 1 to 5"
+                    min="0"
+                    max="5"
+                    value={ranking}
+                    onChange={(e) => setRanking(e.target.value)}
+                />
 
-            <input type="file" onChange={(e) => handleFileUpload(e)} />
+                <input type="file" onChange={(e) => handleFileUpload(e)} />
 
-            {image && (
-                <button type="submit" disabled={loading}>
-                    {loading ? "Submitting..." : "Upload review"}
-                </button>
-            )}
-        </form>
+                {image && (
+                    <button type="submit" disabled={loading}>
+                        {loading ? "Submitting..." : "Upload review"}
+                    </button>
+                )}
+            </form>
         </div>
     );
 }

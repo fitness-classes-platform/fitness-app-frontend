@@ -24,8 +24,8 @@ const uploadImage = (file) => {
       "Content-Type": "multipart/form-data",
     },
   })
-  .then(res => res.data)
-  .catch(errorHandler);
+    .then(res => res.data)
+    .catch(errorHandler);
 };
 
 const createReview = (newReview) => {

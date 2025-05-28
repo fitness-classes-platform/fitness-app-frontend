@@ -50,28 +50,28 @@ function HomePage({ onDeleteClass, classes }) {
         <div className="container">
             <SearchBar onSearch={handleSearch} />
             <section className="homePage">
-            <div className="homePage-card">
-                {error && <p style={{ color: "red" }}>{error}</p>}
-                {filteredData.map((item) => (
-                    <div key={item._id} className="fitness-card">
-                         <img src={item.image} />
-                         <div className="fitness-card-content"> 
-                            <div className="fitness-card-header">
-                        <h2>{item.name}</h2>
-                         <p>📍{item.location}</p> 
-                         </div>
-                        <div className="buttons">
-                            <Link to={`/class/${item._id}`} className="details-btn">
-                                More details
-                            </Link>
-                            {isLoggedIn && (
-                                <button onClick={() => handleDelete(item._id)} className="delete-btn">Delete</button>
-                            )}
+                <div className="homePage-card">
+                    {error && <p style={{ color: "red" }}>{error}</p>}
+                    {filteredData.map((item) => (
+                        <div key={item._id} className="fitness-card">
+                            <img src={item.image} />
+                            <div className="fitness-card-content">
+                                <div className="fitness-card-header">
+                                    <h2>{item.name}</h2>
+                                    <p>📍{item.location}</p>
+                                </div>
+                                <div className="buttons">
+                                    <Link to={`/class/${item._id}`} className="details-btn">
+                                        More details
+                                    </Link>
+                                    {isLoggedIn && (
+                                        <button onClick={() => handleDelete(item._id)} className="delete-btn">Delete</button>
+                                    )}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
             </section>
         </div>
     );

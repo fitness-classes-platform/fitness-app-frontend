@@ -1,9 +1,8 @@
-// src/components/Navbar.jsx
 
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";                     // <== IMPORT 
-import { AuthContext } from "../context/auth.context";  // <== IMPORT
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 
 function Navbar() {
     // Subscribe to the AuthContext to gain access to
@@ -15,60 +14,58 @@ function Navbar() {
     } = useContext(AuthContext);
 
 
-    // 👇 Update the rendering logic to display different content 
-    //  depending on whether the user is logged in or not
     return (
         <div>
             <nav className="navbar">
-                    <div className="navbar-left">
+                <div className="navbar-left">
+                    <NavLink to="/">
+                        <img src="https://i.imgur.com/KqAeA7B.png" alt="app-logo" />
+                    </NavLink>
+                </div>
+
+                <div className="navbar-center">
+                    <div>
                         <NavLink to="/">
-                            <img src="https://i.imgur.com/KqAeA7B.png" alt="app-logo" />
+                            <button className="home-btn">HOME</button>
                         </NavLink>
                     </div>
 
-                    <div className="navbar-center">
-                        <div>
-                            <NavLink to="/">
-                                <button className="home-btn">HOME</button>
-                            </NavLink>
-                        </div>
-
-                        <div>
-
-                            {isLoggedIn && (
-                                <NavLink to="/createClass">
-                                    <button className="createClass-btn">CREATE CLASS</button>
-                                </NavLink>
-                            )}
-
-                        </div>
-
-                        <div>
-
-                            <NavLink to="/about">
-                                <button className="aboutUs-btn">ABOUT US</button>
-                            </NavLink>
-
-                        </div>
-
-                    </div>
-
-                    <div className="navbar-user">
+                    <div>
 
                         {isLoggedIn && (
-                            <>
-                                <h4>{user && user.name}</h4>
-                                <button className="logout-btn" onClick={logOutUser}>Logout</button>
-                            </>
+                            <NavLink to="/createClass">
+                                <button className="createClass-btn">CREATE CLASS</button>
+                            </NavLink>
                         )}
 
-                        {!isLoggedIn && (
-                            <>
-                                <Link to="/login"> <button className="login-btn">Login</button> </Link>
-                                <Link to="/signup"> <button className="signup-btn">Sign Up</button> </Link>
-                            </>
-                        )}
                     </div>
+
+                    <div>
+
+                        <NavLink to="/about">
+                            <button className="aboutUs-btn">ABOUT US</button>
+                        </NavLink>
+
+                    </div>
+
+                </div>
+
+                <div className="navbar-user">
+
+                    {isLoggedIn && (
+                        <>
+                            <h4>{user && user.name}</h4>
+                            <button className="logout-btn" onClick={logOutUser}>Logout</button>
+                        </>
+                    )}
+
+                    {!isLoggedIn && (
+                        <>
+                            <Link to="/login"> <button className="login-btn">Login</button> </Link>
+                            <Link to="/signup"> <button className="signup-btn">Sign Up</button> </Link>
+                        </>
+                    )}
+                </div>
             </nav>
         </div>
     );
