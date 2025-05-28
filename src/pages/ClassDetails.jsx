@@ -49,16 +49,6 @@ function ClassDetails() {
             });
     }, [classId]);
 
-
-    /* useEffect(() => {
-         service.getReviews()
-             .then((data) => {
-                 // console.log("data", data);
-                 setReviews(data);
-             })
-             .catch((err) => console.log(err));
-     }, []); //  <-- This effect will run only once, after the initial render*/
-
     if (error) {
         return <p style={{ color: "red" }}>{error}</p>;
     }
@@ -91,48 +81,63 @@ function ClassDetails() {
 
                     </div>
                 </div>
-                <div className="review-details">
-                    <h3>Reviews</h3>
-                    {reviews.length === 0 ? (
-                        <p>No reviews yet for this class</p>
-                    ) : (
-                        reviews.map((review) => (
-                            review && (
-                                <div key={review._id} className="review-info">
-                                    <h4>{review.title || "No Title"}</h4>
-                                    <p>{review.description || "No Description"}</p>
-                                    {review.image ? (
-                                        <img src={review.image} alt="Review" />
-                                    ) : (
-                                        <p>No image</p>
-                                    )}
+                {isLoggedIn ? (
+                    <>
+                <Link to={`/createReviews/${classId}`} className="review-details-btns-review"> Give us your review </Link>
+                </>
+                ) : (
+                    <p>Please log in to give your review </p>
+                )}
 
-                                    <h5>{review.ranking ?? "No Ranking"} / 5</h5>
-                                    {isLoggedIn && review.author === currentUserId && (
-                                        <div className="edit-delete">
-                                            <Link to={`/review/${review._id}`} className="review-info-edit-btn">
-                                                <img src="https://i.imgur.com/urSPuAY.png" alt="Edit" />
-                                            </Link>
-                                            <button onClick={() => handleDelete(review._id)} className="review-info-delete-btn">
-                                                <img src="https://i.imgur.com/wORiqSE.png" alt="Remove" />
-                                            </button>
-                                        </div>
-                                    )}
+                <div className="reviews-container">
+                    <div className="review-details">
+                        <h3>Reviews</h3>
+                        {reviews.length === 0 ? (
+                            <p>No reviews yet for this class</p>
+                        ) : (
+                            reviews.map((review) => (
+                                review && (
+                                    <div key={review._id} className="review-info">
+                                        <h4>{review.title || "No Title"}</h4>
+                                        <p>{review.description || "No Description"}</p>
 
-                                </div>
+                                        {review.image ? (
+                                            <img src={review.image} alt="Review" />
+                                        ) : (
+                                            <p>No image</p>
+                                        )}
 
-                            )
-                        ))
-                    )}
+
+
+                                        <h5>{review.ranking ? "⭐".repeat(review.ranking) : "No Ranking"}</h5>
+                                        {isLoggedIn && review.author === currentUserId && (
+                                            <div className="edit-delete">
+                                                <Link to={`/review/${review._id}`} className="review-info-edit-btn">
+                                                    <img src="https://i.imgur.com/urSPuAY.png" alt="Edit" />
+                                                </Link>
+                                                <button onClick={() => handleDelete(review._id)} className="review-info-delete-btn">
+                                                    <img src="https://i.imgur.com/wORiqSE.png" alt="Remove" />
+                                                </button>
+                                            </div>
+                                        )}
+
+
+                                    </div>
+
+
+
+                                )
+                            ))
+                        )}
+                    </div>
                 </div>
                 <div className="review-details-btns">
                     {isLoggedIn ? (
                         <>
-                            <Link to={`/createReviews/${classId}`} className="review-details-btns-review"> Give us your review of this class </Link>
                             <Link to={`/class/edit/${classId}`} className="review-details-btns-edit"> Edit Class </Link>
                         </>
                     ) : (
-                        <p>Please log in to edit or review this class</p>
+                        <p>Please log in to edit this class</p>
                     )}
                 </div>
             </section>

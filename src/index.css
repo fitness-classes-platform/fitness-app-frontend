@@ -2,40 +2,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-
 h1 {
-  font-size: 2.5rem;
-  color: black;
-  text-align: center;
+    font-size: 2.5rem;
+    color: black;
+    text-align: center;
 }
 
 h2 {
     color: black;
-    font-family: "Inter", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 1.7rem;
-  color: black;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 1.7rem;
+    color: black;
+    font-size: 1.7rem;
 }
 
 h3 {
     color: #696969;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 1.1rem;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
-
 
 .navbar {
     display: flex;
@@ -47,127 +43,96 @@ h3 {
     position: sticky;
     top: 0;
     z-index: 1000;
-    font-family: "Martian Mono", monospace;
-  }
-  
-  .navbar-left,
-  .navbar-center,
-  .navbar-user {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-left {
-    flex: 1;
-    justify-content: flex-start;
-  }
-  
-  .navbar-left img {
-    width: 60px;
-  }
-  
-  .navbar-center {
-    flex: 0;
-    justify-content: center;
-    gap: 6rem; 
-    text-align: center;
-  }
-  
-  .navbar-user {
-    flex: 1;
-    justify-content: flex-end;
-    gap: 0.75rem; 
-  }
-  
-  .navbar-user h4 {
-    font-size: 1rem; 
-    margin: 0;
-  }
-  
-
-
-.btn {
-  padding: 0.4rem 0.8rem;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-family: "Open Sans", sans-serif;
-  font-size: 15px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.2s;
+    font-family: "Open Sans", sans-serif;
 }
 
+.navbar-left,
+.navbar-center,
+.navbar-user {
+    display: flex;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+.navbar-left img {
+    width: 60px;
+}
+
+.navbar-user h4 {
+    font-size: 1rem;
+    margin: 0;
+}
 
 .home-btn,
 .aboutUs-btn,
 .createClass-btn {
-  text-align: center;
-  border: none;
-  font-size: 13px;
-  cursor: pointer;
-  background: transparent;
-  width: 100px;
-  padding: 0.3rem;
-  border: none;
-  border-radius: 5px;
+    text-align: center;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    background: transparent;
+    width: 100px;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 5px;
 }
-
 .home-btn:hover,
 .aboutUs-btn:hover,
 .createClass-btn:hover {
-  background-color: #6366f1;
-  color: white;
+    background-color: #6366f1;
+    color: white;
 }
-
 
 .login-btn,
 .signup-btn,
 .logout-btn {
-  background-color: transparent;
-  color: #6366f1;
-  border: 1px solid #6366f1;
-  text-align: center;
-  padding: 0.3rem;
-  border: none;
-  border-radius: 5px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 15px;
-  cursor: pointer;
-  width: 90px;
+    background-color: transparent;
+    color: rgb(107, 0, 98);
+    border: 1px solid #6366f1;
+    text-align: center;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    width: 90px;
 }
 
 .login-btn:hover,
 .signup-btn:hover,
 .logout-btn:hover {
-  background-color: #6366f1;
-  color: white;
+    background-color: #6366f1;
+    color: white;
 }
 
-.signup, .signin {
+.signup,
+.signin {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem;
-  }
-  
-  .signupPage {
+}
+
+.signupPage,
+.loginPage {
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 30vw;
-  }
-  
-  .signupPage h1 {
+}
+
+.signupPage h1,
+.loginPage h1  {
     text-align: center;
-    font-family: "Martian Mono", monospace;
+    font-family: "Open Sans", sans-serif;
     font-size: 40px;
-    background-color: rgb(255, 230, 0);
-  }
-  
-  .signupPageForm {
+}
+
+.signupPageForm,
+.loginPageForm {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
@@ -175,14 +140,16 @@ h3 {
     align-items: center;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
-  }
-  
-  .signupPage label {
+}
+
+.signupPage label,
+.loginPage label {
     margin: 15px 0 5px;
     font-weight: bold;
-  }
-  
-  .signupPage input {
+}
+
+.signupPage input,
+.loginPageForm input {
     text-align: center;
     font-size: 14px;
     border: 1px solid black;
@@ -194,10 +161,10 @@ h3 {
     border-style: solid;
     border-width: 1px;
     border-color: black;
-  }
-  
-  .signupPage button,
-  .signupPageLink {
+}
+
+.signupPage button,
+.signupPageLink{
     all: unset;
     display: inline-block;
     text-align: center;
@@ -208,149 +175,108 @@ h3 {
     cursor: pointer;
     user-select: none;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .signupPage button {
+}
+
+.signupPage button,
+.loginPage button{
+    margin-top: 10px;
+    background-color: rgb(107, 0, 98);
+    color: white;
+    border: 1px solid #6366f1;
+    text-align: center;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    width: 110px;
+}
+
+.signupPage button:hover,
+.loginPage button:hover {
+    background-color: #6366f1;
+    transform: scale(1.00);
+}
+
+.signupPageLink {
     background-color: rgb(255, 94, 0);
-    width: 130px;
-    font-size: 16px;
-    margin-top: 18px;
-  }
-  
-  .signupPage button:hover {
-    background-color: rgb(220, 80, 0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .signupPageLink {
-    background-color: rgb(0, 143, 19);
     width: 70px;
     margin-top: 5px;
     font-size: 14px;
-  }
-  
-  .signupPageLink:hover {
-    background-color: rgb(0, 120, 0);
+}
+
+.signupPageLink:hover {
+    background-color: #6366f1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .signupPage p {
+}
+
+.signupPage p,
+.loginPage p {
     margin-top: 50px;
     font-family: "Open Sans", sans-serif;
     font-weight: bold;
-  }
-  
-  .signupPage ul {
+}
+
+.signupPage ul {
     list-style: none;
     font-size: 11px;
     color: rgb(65, 65, 65);
     margin-top: 5px;
     padding-left: 0;
-  }
-  
-
-  .loginPage {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30vw;
-  }
-  
-  .loginPage h1 {
-    text-align: center;
-    font-family: "Martian Mono", monospace;
-    font-size: 40px;
-    background-color: rgb(255, 230, 0);
-  }
-  
-  .loginPageForm {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    font-family: "Open Sans", sans-serif;
-    font-size: 18px;
-    text-align: center;
-  }
-
-  .loginPageForm input {
-    text-align: center;
-  }
-  
-  .loginPage label {
-    margin: 15px 0 5px
-  }  
-
-.loginPage p {
-  margin-top: 50px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: bold;
 }
+
+
+
 
 .loginPageLink {
-  all: unset;
-  text-align: center;
-  padding: 0.3rem;
-  background-color: rgb(255, 94, 0);
-  width: 70px;
-  border: none;
-  border-radius: 5px;
-  margin-top: 5px;
-  color: white;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  cursor: pointer;
+    all: unset;
+    text-align: center;
+    padding: 0.3rem;
+    background-color: rgb(255, 94, 0);
+    width: 70px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-.loginPage button {
-  margin-top: 10px;
-  background-color: transparent;
-  color: #6366f1;
-  border: 1px solid #6366f1;
-  text-align: center;
-  padding: 0.3rem;
-  border: none;
-  border-radius: 5px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 15px;
-  cursor: pointer;
-  width: 90px;
-}
-
-.loginPage button:hover {
-  background-color: #6366f1;
-  color: white;
-}
 
 .loginPageLink:hover {
-  background-color: rgb(220, 80, 0);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #6366f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .error-message {
-  color: red;
+    color: red;
 }
 
-.create-class-form {
+.create-class-form,
+.create-reviews-form,
+.edit-form {
     max-width: 600px;
     margin: 3rem auto;
     background-color: #fff;
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-    font-family: "Inter", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
-.create-class-form form {
+.create-class-form form,
+.create-reviews-form form,
+.edit-form form {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
 }
 
-.create-class-form label {
+.create-class-form label,
+.create-reviews-form label,
+.edit-form label {
     font-weight: 600;
     font-size: 0.95rem;
     color: #333;
@@ -359,7 +285,11 @@ h3 {
 }
 
 .create-class-form input,
-.create-class-form select {
+.create-class-form select,
+.create-reviews-form input,
+.create-reviews-form select,
+.edit-form input,
+.edit-form select {
     padding: 0.6rem 1rem;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -369,14 +299,20 @@ h3 {
 }
 
 .create-class-form input:focus,
-.create-class-form select:focus {
+.create-class-form select:focus,
+.create-reviews-form input:focus,
+.create-reviews-form select:focus,
+.edit-form input:focus,
+.edit-form select:focus {
     border-color: #8a2be2;
     outline: none;
 }
 
-.create-class-form button {
+.create-class-form button,
+.create-reviews-form button,
+.edit-form button {
     padding: 0.75rem;
-    background-color: #8a2be2;
+    background-color: rgb(107, 0, 98);
     color: white;
     border: none;
     border-radius: 8px;
@@ -386,7 +322,9 @@ h3 {
     transition: background-color 0.3s ease;
 }
 
-.create-class-form button:hover {
+.create-class-form button:hover,
+.create-reviews-form button:hover,
+.edit-form button:hover {
     background-color: #7326c1;
 }
 
@@ -403,53 +341,49 @@ h3 {
 }
 
 .homePage {
-  display: flex;
-  height: 100vh;
-  background-color: #fff;
+
+    display: flex;
+    height: 100vh;
+    background-color: #fff;
 }
 
 .homePage h1 {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 
 .homePage-card {
-  width: 100%;
-  overflow-y: scroll;
-  padding: 1rem;
-  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+    width: 100%;
+    overflow-y: scroll;
+    padding: 1rem;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
-
-.homePage-card:hover {
-    background-color: #fff0f0;
-    transform: scale(1.05);
-}
-
 
 .homePage-card p {
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 15px;
-  color: #585858;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    color: #585858;
 }
 
 .fitness-card {
     display: flex;
-    margin-bottom: 1rem;
-    background: #fafafa;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    align-items: flex-start;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+    gap: 1.5rem;
 }
 
 .fitness-card img {
     width: 120px;
-    height: 100%;
+    height: 80px;
     object-fit: cover;
+    border-radius: 8px;
 }
-
-
 
 .fitness-card .desc {
     font-size: 0.9rem;
@@ -458,270 +392,542 @@ h3 {
 
 .fitness-card p {
     padding: 20px;
-    ;
-
-
 }
 
-
-.details-btn {
-    text-decoration: none;
-    background-color: #9900ad;
-    color: rgb(255, 255, 255);
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: none;
-    font-weight: 500;
-    font-size: 0.8rem;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    transition: background-color 0.2s;
-    margin: 10px;
-    width: 100px;
-    font-family: "Open Sans", sans-serif;
+.fitness-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+.fitness-card-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.fitness-card-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.details-btn,
 .delete-btn {
-    text-decoration: none;
-    background-color: #ff0000;
+    background-color: rgb(107, 0, 98);
+    ;
     color: white;
-    padding: 8px 12px;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
     border: none;
-    font-weight: 500;
-    font-size: 0.7rem;
+    text-decoration: none;
+    font-size: 15px;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    transition: background-color 0.2s;
-    margin: 10px;
-    width: 70px;
-    font-family: "Open Sans", sans-serif;
 }
 
+.details-btn:hover {
+    background-color: #6366f1;
+    transform: scale(1.00);
+}
+
+
+.delete-btn:hover {
+    background-color: #ff3b30;
+    transform: scale(1.00);
+}
 
 .classes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 50px;
-}
-
-
-.searchBar-bar {
-    width: 450px;
-    height: 40px;
-    font-size: 18px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 1px solid grey;
-    margin-bottom: 1rem;
-
-}
-
-
-.page-details-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.page-details-section h1 {
-  color: #6366f1;
-  font-family: "Martian Mono", monospace;
-  font-size: 60px;
-  margin-top: 15px;
-}
-
-.page-details-section h3 {
-  color: #f17863;
-  font-family: "Martian Mono", monospace;
-  font-size: 30px;
-  margin-top: 15px;
-  text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
 }
 
 .page-details {
-  text-align: center;
-  padding: 2rem;
-  font-family: 'Segoe UI', sans-serif;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 100px;
+    text-align: center;
+    padding: 2rem;
+    font-family: "Open Sans", sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    border-radius: 8px;
+    width: 90vw;
+}
+
+.page-details-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-details-section h1 {
+    color: rgb(107, 0, 98);
+    ;
+    font-family: "Open Sans", sans-serif;
+    font-size: 60px;
+    margin-top: 15px;
+}
+
+.page-details-section h3 {
+    color: rgb(107, 0, 98);
+    ;
+    font-family: "Open Sans", sans-serif;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
 }
 
 .page-details img {
-  width: 500px;
-  height: 400px;
-  object-fit: cover;
-  object-position: center;
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
 }
 
 .page-details-info {
-  height: 290px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-family: "Open Sans", sans-serif;
-  background-color: #ebebeb;
-  padding: 2rem;
-  border-radius: 12px
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Open Sans", sans-serif;
+    background-color: #ebebeb;
+    padding: 2rem;
+    border-radius: 12px
+}
+
+.reviews-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 90vw;
 }
 
 .review-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  font-family: "Open Sans", sans-serif;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.2s ease;
+    width: 90vw;
 }
 
-.review-details h3 {
-  margin-top: 20px;
-  margin-bottom: 40px;
+.review-details:hover {
+    transform: translateY(-5px);
 }
 
+.review-details header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.review-details img {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.75rem;
+}
 
 .review-info {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  font-family: "Open Sans", sans-serif;
-  border-radius: 12px;
-  width: 500px;
-  padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 0.95rem;
+    color: black;
+    line-height: 1.5;
+    text-align: center;
 }
 
 .review-info h4 {
-  font-size: 25px;
-  text-decoration: underline;
-}
-
-.review-info p {
-  text-align: center;
+    font-size: 1.25rem;
+    text-decoration: underline;
+    margin: 0.5rem 0;
 }
 
 .review-info h5 {
-  font-size: 30px;
-  color: #9900ad;
-  margin-top: 10px;
+    font-size: 1.5rem;
+    color: rgb(107, 0, 98);
+    ;
+    margin-top: 10px;
 }
 
-.review-info img {
-  width: 400px;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
+.review-rating {
+    color: #fbbf24;
+    font-size: 1.1rem;
 }
 
-.review-info-edit-btn img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
+.review-info-edit-btn img,
+.review-info-delete-btn img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    cursor: pointer;
+    border: none;
+    background: none;
 }
 
 .review-info-delete-btn {
-  all: unset;
-  cursor: pointer;
-}
-
-.review-info-delete-btn img {
-  all: unset;
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
+    all: unset;
+    cursor: pointer;
 }
 
 .edit-delete {
-  display: flex;
-  gap: 10px;
-  padding: 1rem;
+    display: flex;
+    gap: 10px;
+    padding: 1rem;
 }
 
+
 .review-details-btns {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 2rem;
-  gap: 20px;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    gap: 20px;
+    align-items: center;
+}
+
+.review-details-btns-review,
+.review-details-btns-edit {
+    all: unset;
+    text-align: center;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    width: 200px;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    background: rgb(107, 0, 98);
+}
+
+.review-details-btns-review:hover,
+.review-details-btns-edit:hover {
+    background-color: #6366f1;
+    transform: scale(1.00);
 }
 
 .review-details-btns-review {
-  all: unset;
-  text-align: center;
-  border: none;
-  font-size: 13px;
-  cursor: pointer;
-  background: rgb(68, 255, 99);
-  width: 200px;
-  padding: 0.3rem;
-  border: none;
-  border-radius: 5px;
-  margin-top: 10px;
-  font-family: "Open Sans", sans-serif;
-}
-
-.review-details-btns-edit {
-  all: unset;
-  text-align: center;
-  border: none;
-  font-size: 13px;
-  cursor: pointer;
-  background: rgb(107, 0, 98);
-  width: 100px;
-  padding: 0.3rem;
-  border: none;
-  border-radius: 5px;
-  font-family: "Open Sans", sans-serif;
-  color: white;
+    margin-top: 30px;
 }
 
 .review-details-btns p {
-  font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
+}
+
+
+.about-section {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 80vh;
+}
+
+.about-section h1 {
+    color: rgb(107, 0, 98);
+    margin-bottom: 40px;
+}
+
+.about-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: #1a1a1a;
 }
 
 .footer {
-  background-color: #F9F7F7;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid #ddd;
-  margin-top: 2rem;
+    background-color: #F9F7F7;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ddd;
+    margin-top: 2rem;
 }
 
 .footer-links {
-  display: flex;
-  gap: 1.5rem;
-  font-family: "Open Sans", sans-serif;
+    display: flex;
+    gap: 1.5rem;
+    font-family: "Open Sans", sans-serif;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+    .container {
+        padding: 0.5rem;
+    }
+
     .navbar {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        gap: 0.75rem;
+    }
+
+    .navbar-center {
+        gap: 2rem;
+    }
+
+    .loginPage,
+    .signupPage p {
+       font-size: 12px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         gap: 1rem;
     }
 
-    .homePage {
+
+    .homePage-card {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .fitness-card {
         flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .fitness-card img {
+        width: 100%;
         height: auto;
+    }
+
+    .create-class-form {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+
+    .create-review-form {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+
+    .page-details {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .page-details img {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .page-details-info {
+        width: 100%;
+        padding: 1rem;
+        height: auto;
+    }
+
+    .page-details-section h1 {
+        font-size: 2rem;
+    }
+
+    .page-details-section h3 {
+        font-size: 1.25rem;
+    }
+
+    .edit-delete {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .reviews-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .review-details-btns {
+        padding: 1rem;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .container {
+        padding: 1rem 2rem;
+    }
+
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .navbar-center {
+        gap: 4rem;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+
+    .searchBar-bar {
+        width: 100%;
+    }
+
+    .homePage-card {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .fitness-card {
+        flex-direction: row;
+        width: 100%;
+    }
+
+
+    .create-class-form {
+        max-width: 500px;
+        margin: 3rem auto;
+    }
+
+    .create-review-form {
+        max-width: 500px;
+        margin: 3rem auto;
+    }
+
+    .page-details {
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 2rem;
+    }
+
+    .page-details img {
+        width: 100%;
+        height: auto;
+    }
+
+    .page-details-info {
+        width: 40%;
+        padding: 1.5rem;
+    }
+
+    .page-details-section h1 {
+        font-size: 3rem;
+    }
+
+    .page-details-section h3 {
+        font-size: 1.75rem;
+    }
+
+    .reviews-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+        padding: 1rem 3rem;
+    }
+
+    .navbar {
+        padding: 1rem 3rem;
+    }
+
+    .navbar-center {
+        gap: 8rem;
     }
 
     .homePage-card {
         width: 90%;
+        display: block;
+        width: 100%;
+        padding: 1rem;
     }
+
+    .fitness-card {
+        flex-direction: row;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
 
     .signupPage,
     .loginPage {
         width: 90vw;
     }
 
+    .fitness-card img {
+        width: 140px;
+        height: 100px;
+    }
+
+
+    .create-class-form {
+        max-width: 700px;
+        margin: 4rem auto;
+    }
+
+    .create-review-form {
+        max-width: 700px;
+        margin: 4rem auto;
+    }
+
+
+    .page-details {
+        flex-direction: row;
+        padding: 2rem 3rem;
+        gap: 4rem;
+    }
+
     .page-details img {
-        width: 90%;
+        width: 500px;
+    }
+
+    .page-details-info {
+        width: 500px;
+        padding: 2rem;
+    }
+
+    .page-details-section h1 {
+        font-size: 4rem;
+    }
+
+    .page-details-section h3 {
+        font-size: 2.5rem;
+    }
+
+    .reviews-container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 2rem 3rem;
+    }
+
+    .edit-delete {
+        gap: 20px;
+    }
+
+    .review-details-btns {
+        flex-direction: row;
     }
 }

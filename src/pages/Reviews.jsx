@@ -71,13 +71,14 @@ function CreateReviews() {
     };
 
     return (
+        <div className="create-reviews-form">
         <form onSubmit={handleSubmit}>
             {error && <p style={{ color: "red" }}>{error}</p>}
             <label>Title:</label>
             <input
                 type="text"
                 name="Title"
-                placeholder="Review Title"
+                placeholder="What do you want to call this review"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
             />
@@ -86,7 +87,7 @@ function CreateReviews() {
             <input
                 type="text"
                 name="Description"
-                placeholder="Description of the class"
+                placeholder="Give us your best description for this class"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
             />
@@ -95,7 +96,7 @@ function CreateReviews() {
             <input
                 type="number"
                 name="Ranking"
-                placeholder="Rank the class"
+                placeholder="Give us your ranking from 1 to 5"
                 min="0"
                 max="5"
                 value={ranking}
@@ -110,6 +111,7 @@ function CreateReviews() {
                 </button>
             )}
         </form>
+        </div>
     );
 }
 

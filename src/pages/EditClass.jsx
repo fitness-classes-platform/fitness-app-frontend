@@ -76,7 +76,7 @@ function EditClass() {
   };
 
   return (
-    <div>
+    <div className="edit-form">
       <form onSubmit={handleSubmit}>
         <h4>Name</h4>
         <input
