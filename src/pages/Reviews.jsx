@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import service from "../services/file-upload.service"
+import service from "../services/file-upload.service";
 
 function CreateReviews() {
     const { classId } = useParams();
@@ -9,32 +9,38 @@ function CreateReviews() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [ranking, setRanking] = useState("");
-    const [image, setImage] = useState(null)
+    const [image, setImage] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
+    const fileInputRef = useRef(null);
     const navigate = useNavigate();
 
     const handleFileUpload = (e) => {
-        // console.log("The file to be uploaded is: ", e.target.files[0]);
-
         const uploadData = new FormData();
-
-        // imageUrl => this name has to be the same as in the model since we pass
-        // req.body to .create() method when creating a new movie in '/api/movies' POST route
-        uploadData.append("image", e.target.files[0]);
+        const file = e.target.files[0];
+        uploadData.append("image", file);
 
         setLoading(true);
 
         service
             .uploadImage(uploadData)
-            .then(response => {
+            .then((response) => {
                 setImage(response.fileUrl);
             })
-            .catch(err => console.log("Error while uploading the file: ", err))
+            .catch((err) => {
+                console.log("Error while uploading the file: ", err);
+                setError("Image upload failed.");
+            })
             .finally(() => setLoading(false));
     };
 
+    const handleRemoveImage = () => {
+        setImage(null);
+        if (fileInputRef.current) {
+            fileInputRef.current.value = "";
+        }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -45,8 +51,11 @@ function CreateReviews() {
             title,
             description,
             ranking: Number(ranking),
-            image,
         };
+
+        if (image) {
+            reviewData.image = image;
+        }
 
         const storedToken = localStorage.getItem("authToken");
 
@@ -58,7 +67,10 @@ function CreateReviews() {
                 setTitle("");
                 setDescription("");
                 setRanking("");
-                setImage("")
+                setImage(null);
+                if (fileInputRef.current) {
+                    fileInputRef.current.value = "";
+                }
                 navigate(`/class/${classId}`);
             })
             .catch((error) => {
@@ -74,6 +86,7 @@ function CreateReviews() {
         <div className="create-reviews-form">
             <form onSubmit={handleSubmit}>
                 {error && <p style={{ color: "red" }}>{error}</p>}
+
                 <label>Title:</label>
                 <input
                     type="text"
@@ -81,6 +94,7 @@ function CreateReviews() {
                     placeholder="What do you want to call this review"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
+                    required
                 />
 
                 <label>Description:</label>
@@ -90,6 +104,7 @@ function CreateReviews() {
                     placeholder="Give us your best description for this class"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
+                    required
                 />
 
                 <label>Ranking:</label>
@@ -101,18 +116,42 @@ function CreateReviews() {
                     max="5"
                     value={ranking}
                     onChange={(e) => setRanking(e.target.value)}
+                    required
                 />
 
-                <input type="file" onChange={(e) => handleFileUpload(e)} />
+                <label>Image (optional):</label>
+                <input type="file" onChange={handleFileUpload} ref={fileInputRef} />
 
                 {image && (
-                    <button type="submit" disabled={loading}>
-                        {loading ? "Submitting..." : "Upload review"}
-                    </button>
+                    <div style={{ margin: "10px 0" }} className="preview-img">
+                        <p>Image Preview:</p>
+                        <img
+                            src={image}
+                            alt="Preview"
+                            style={{ maxWidth: "200px", borderRadius: "8px" }}
+                        />
+                        <br />
+                        <button
+                            type="button"
+                            onClick={handleRemoveImage}
+                            className="delete-preview"
+                        >
+                            Remove image
+                        </button>
+                    </div>
                 )}
+
+                {loading && <p>Uploading...</p>}
+
+                <button type="submit" disabled={loading}>
+                    {loading ? "Submitting..." : "Upload review"}
+                </button>
             </form>
         </div>
     );
 }
 
 export default CreateReviews;
+
+
+

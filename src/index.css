@@ -394,6 +394,22 @@ h3 {
     background-color: #7326c1;
 }
 
+.preview-img p {
+  margin-bottom: 15px;
+}
+
+.preview-img button {
+    padding: 0.75rem;
+    background-color: rgb(232, 31, 5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.7rem;
+    transition: background-color 0.3s ease;
+}
+
 
 .searchBar-bar {
     width: 100%;
@@ -610,6 +626,9 @@ h3 {
     color: black;
     line-height: 1.5;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .review-info h4 {
@@ -647,8 +666,15 @@ h3 {
 
 .edit-delete {
     display: flex;
-    gap: 10px;
-    padding: 1rem;
+    flex-direction: row;
+    margin-top: 25px;
+}
+
+.edit-delete img {
+    display: block;
+    width: 40px;
+    gap: 0;
+    padding: 0;
 }
 
 

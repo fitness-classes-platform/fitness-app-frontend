@@ -41,7 +41,7 @@ function ClassDetails() {
             .get(`${import.meta.env.VITE_API_URL}/api/class/${classId}`)
             .then((response) => {
                 setClassData(response.data);
-                setReviews(response.data.reviews); // Set reviews directly
+                setReviews(response.data.reviews);
             })
             .catch((e) => {
                 console.log("Error finding class details", e);
@@ -101,15 +101,12 @@ function ClassDetails() {
                                         <h4>{review.title || "No Title"}</h4>
                                         <p>{review.description || "No Description"}</p>
 
-                                        {review.image ? (
+                                        {review.image && (
                                             <img src={review.image} alt="Review" />
-                                        ) : (
-                                            <p>No image</p>
                                         )}
 
-
-
                                         <h5>{review.ranking ? "⭐".repeat(review.ranking) : "No Ranking"}</h5>
+                                        
                                         {isLoggedIn && review.author === currentUserId && (
                                             <div className="edit-delete">
                                                 <Link to={`/review/${review._id}`} className="review-info-edit-btn">
@@ -120,12 +117,7 @@ function ClassDetails() {
                                                 </button>
                                             </div>
                                         )}
-
-
                                     </div>
-
-
-
                                 )
                             ))
                         )}
