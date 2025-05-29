@@ -54,8 +54,7 @@ function EditReview() {
     };
 
     return (
-        <div>
-            <h2>Edit Review</h2>
+        <div className="create-reviews-form">
             <form onSubmit={handleSubmit}>
                 <label>Title:</label>
                 <input
@@ -65,7 +64,8 @@ function EditReview() {
                 />
 
                 <label>Description:</label>
-                <textarea
+                <input
+                    type="text"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                 />

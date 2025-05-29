@@ -643,6 +643,10 @@ h3 {
     border-radius: 0.75rem;
 }
 
+.review-details p {
+    font-family: "Open Sans", sans-serif;
+}
+
 .review-info {
     font-size: 0.95rem;
     color: black;
