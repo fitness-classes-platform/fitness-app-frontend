@@ -101,13 +101,9 @@ function ClassDetails() {
                                         <h4>{review.title || "No Title"}</h4>
                                         <p>{review.description || "No Description"}</p>
 
-                                        {review.image ? (
+                                        {review.image && (
                                             <img src={review.image} alt="Review" />
-                                        ) : (
-                                            <p>No image</p>
                                         )}
-
-
 
                                         <h5>{review.ranking ? "⭐".repeat(review.ranking) : "No Ranking"}</h5>
                                         {isLoggedIn && review.author === currentUserId && (
@@ -120,12 +116,7 @@ function ClassDetails() {
                                                 </button>
                                             </div>
                                         )}
-
-
                                     </div>
-
-
-
                                 )
                             ))
                         )}
