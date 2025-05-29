@@ -140,7 +140,7 @@ function CreateReviews() {
                     </div>
                 )}
 
-                {loading && <p>Uploading image...</p>}
+                {loading && <p>Uploading...</p>}
 
                 <button type="submit" disabled={loading}>
                     {loading ? "Submitting..." : "Upload review"}
