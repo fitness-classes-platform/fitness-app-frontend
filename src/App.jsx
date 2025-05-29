@@ -15,6 +15,7 @@ import CreateClass from './pages/CreateClass';
 import EditClass from './pages/EditClass';
 import CreateReviews from './pages/Reviews';
 import EditReview from './pages/EditReview';
+import WelcomePage from './pages/WelcomePage';
 
 
 function App() {
@@ -62,8 +63,9 @@ function App() {
       <Navbar />
       {error && <p style={{ color: "red", fontWeight: "bold" }}>{error}</p>}
       <Routes>
+        <Route path="/" element={<WelcomePage/>} />
         <Route
-          path="/"
+          path="/class"
           element={<HomePage classes={filteredClasses} onDeleteClass={handleDeleteClass} />}
         />
         <Route

@@ -26,25 +26,33 @@ function Navbar() {
                 <div className="navbar-center">
                     <div>
                         <NavLink to="/">
-                            <button className="home-btn">HOME</button>
+                            <button className="home-btn"> <p> HOME </p> </button>
                         </NavLink>
+                    </div>
+
+                    <div >
+                        <div>
+                            <NavLink to="/class">
+                                <button className="class-btn"> <p> CLASSES </p> </button>
+                            </NavLink>
+                        </div>
+                    </div>
+
+                    <div>
+
+                        <NavLink to="/about">
+                            <button className="aboutUs-btn"> <p> ABOUT US </p></button>
+                        </NavLink>
+
                     </div>
 
                     <div>
 
                         {isLoggedIn && (
                             <NavLink to="/createClass">
-                                <button className="createClass-btn">CREATE CLASS</button>
+                                <button className="createClass-btn"> <p> CREATE CLASS </p></button>
                             </NavLink>
                         )}
-
-                    </div>
-
-                    <div>
-
-                        <NavLink to="/about">
-                            <button className="aboutUs-btn">ABOUT US</button>
-                        </NavLink>
 
                     </div>
 
