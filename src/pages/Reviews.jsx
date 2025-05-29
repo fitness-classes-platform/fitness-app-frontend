@@ -123,8 +123,8 @@ function CreateReviews() {
                 <input type="file" onChange={handleFileUpload} ref={fileInputRef} />
 
                 {image && (
-                    <div style={{ margin: "10px 0" }}>
-                        <p>Preview:</p>
+                    <div style={{ margin: "10px 0" }} className="preview-img">
+                        <p>Image Preview:</p>
                         <img
                             src={image}
                             alt="Preview"
@@ -134,6 +134,7 @@ function CreateReviews() {
                         <button
                             type="button"
                             onClick={handleRemoveImage}
+                            className="delete-preview"
                         >
                             Remove image
                         </button>
