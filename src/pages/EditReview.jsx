@@ -11,6 +11,7 @@ function EditReview() {
   const [description, setDescription] = useState("");
   const [ranking, setRanking] = useState(1);
   const [image, setImage] = useState(null);
+  const [imageRemoved, setImageRemoved] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -26,6 +27,10 @@ function EditReview() {
           setDescription(data.description || "");
           setRanking(data.ranking || 1);
           setImage(data.image || null);
+          setImageRemoved(false);
+          if (fileInputRef.current) {
+            fileInputRef.current.value = "";
+          }
         })
         .catch((error) => {
           console.log("Error loading review", error);
@@ -46,6 +51,7 @@ function EditReview() {
       .uploadImage(uploadData)
       .then((response) => {
         setImage(response.fileUrl);
+        setImageRemoved(false);
       })
       .catch((err) => {
         console.log("Error while uploading the file: ", err);
@@ -56,6 +62,7 @@ function EditReview() {
 
   const handleRemoveImage = () => {
     setImage(null);
+    setImageRemoved(true);
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
@@ -70,7 +77,9 @@ function EditReview() {
       ranking,
     };
 
-    if (image) {
+    if (imageRemoved) {
+      updatedReview.image = null;
+    } else if (image) {
       updatedReview.image = image;
     }
 
