@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
 
+html, body {
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -89,6 +93,7 @@ h3 {
     text-decoration: none;
     font-size: 15px;
     cursor: pointer;
+    font-family: "Open Sans", sans-serif;;
 }
 
 .welcome-class-btn:hover{
@@ -124,7 +129,18 @@ h3 {
 .navbar-user h4 {
     font-size: 1rem;
     margin: 0;
+    width: 32px;
+    height: 32px;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-transform: uppercase;
+    font-weight: bold;
 }
+
 
 .home-btn,
 .aboutUs-btn,
@@ -485,8 +501,9 @@ h3 {
 
 .fitness-card-header {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -494,6 +511,10 @@ h3 {
     font-size: 1.25rem;
     font-weight: 700;
     margin: 0;
+}
+
+.fitness-card-header h3 {
+    font-size: 0.95rem;
 }
 
 .details-btn,
@@ -506,6 +527,7 @@ h3 {
     text-decoration: none;
     font-size: 15px;
     cursor: pointer;
+    font-family: "Open Sans", sans-serif;
 }
 
 .details-btn:hover {
@@ -629,6 +651,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Open Sans", sans-serif;
 }
 
 .review-info h4 {
@@ -639,9 +662,14 @@ h3 {
 
 .review-info h5 {
     font-size: 1.5rem;
-    color: rgb(107, 0, 98);
-    ;
+    margin-top: 30px;
+}
+
+.review-info p {
+    font-size: 1rem;
     margin-top: 10px;
+    max-width: 700px;
+    margin-bottom: 20px;
 }
 
 .review-rating {

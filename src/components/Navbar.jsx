@@ -62,7 +62,7 @@ function Navbar() {
 
                     {isLoggedIn && (
                         <>
-                            <h4>{user && user.name}</h4>
+                            <h4>{user && user.name.charAt(0).toUpperCase()}</h4>
                             <button className="logout-btn" onClick={logOutUser}>Logout</button>
                         </>
                     )}

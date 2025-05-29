@@ -58,7 +58,7 @@ function HomePage({ onDeleteClass, classes }) {
                             <div className="fitness-card-content">
                                 <div className="fitness-card-header">
                                     <h2>{item.name}</h2>
-                                    <p>📍{item.location}</p>
+                                    <h3>{item.location}</h3>
                                 </div>
                                 <div className="buttons">
                                     <Link to={`/class/${item._id}`} className="details-btn">
