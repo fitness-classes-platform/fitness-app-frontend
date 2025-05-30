@@ -43,7 +43,7 @@ function CreateClass() {
                 setSchedule("");
                 setDifficulty("");
                 setContacts("");
-                navigate("/");
+                navigate("/class");
             })
             .catch((error) => {
                 console.log("Error creating class", error);
