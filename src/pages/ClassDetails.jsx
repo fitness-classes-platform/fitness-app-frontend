@@ -129,7 +129,7 @@ function ClassDetails() {
                             <Link to={`/class/edit/${classId}`} className="review-details-btns-edit"> Edit Class </Link>
                         </>
                     ) : (
-                        <p>Please log in to edit this class and to gives us your review </p>
+                        <p>Please log in to edit this class and to give us your review </p>
                     )}
                 </div>
             </section>
