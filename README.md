@@ -1,12 +1,51 @@
-# React + Vite
+# Fitness App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## **Fitness App** is a web application built by Web Development students at Ironhack. The app was created to help users discover and explore a wide variety of fitness classes, promoting a healthier and more active lifestyle. 
 
-Currently, two official plugins are available:
+Users can browse different types of classes such as:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🧘 Yoga sessions
 
-## Expanding the ESLint configuration
+🤸 Pilates
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🏋️ Functional training
+
+🕺 Zumba and many more
+
+The app also allows users to:
+
+⭐ Read reviews and ratings from other participants
+
+✍️ Leave their own feedback on each class
+
+📅 Find classes that fit their schedule and interests
+
+Our goal is to provide an intuitive, interactive, and motivating experience for everyone looking to improve their physical and mental well-being.
+
+---
+
+## 🛠️ How to Run This App Locally
+
+Follow these steps to clone and run the project on your local machine:
+
+### 1. Clone the repository
+```bash
+git clone
+```
+### 2. Install dependencies
+```bash
+npm install
+```
+### 3. Environment variables
+```bash
+do not forget to create a .env file with a URL for your backend. Example: VITE_API_URL=http://localhost:5005
+```
+### 4. Run the application
+```bash
+npm run dev
+```
+
+---
+
+## Demo
+🔗 https://fitnessclassapp.netlify.app/

@@ -49,19 +49,19 @@ h3 {
 
 @keyframes backgroundSlideshow {
     0% {
-        background-image: url("./images/image1.jpg");
+        background-image: url("https://i.imgur.com/AnvhbaQ.jpeg");
     }
 
     33% {
-        background-image: url("./images/image 2.jpg");
+        background-image: url("https://i.imgur.com/VDE5LXR.jpeg");
     }
 
     66% {
-        background-image: url("./images/imagem 5.png");
+        background-image: url("https://i.imgur.com/2E8pj6j.jpeg");
     }
 
     100% {
-        background-image: url("./images/image 4.jpeg");
+        background-image: url("https://i.imgur.com/70x6WPG.png");
     }
 }
 
