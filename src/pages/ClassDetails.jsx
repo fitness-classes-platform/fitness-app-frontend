@@ -83,7 +83,7 @@ function ClassDetails() {
                 </div>
                 {isLoggedIn ? (
                     <>
-                        <Link to={`/createReviews/${classId}`} className="review-details-btns-review"> Give us your review </Link>
+                        <Link to={`/createReviews/${classId}`} className="review-details-btns-review"> </Link>
                     </>
                 ) : (
                     <p>Please log in to give your review </p>
@@ -129,7 +129,7 @@ function ClassDetails() {
                             <Link to={`/class/edit/${classId}`} className="review-details-btns-edit"> Edit Class </Link>
                         </>
                     ) : (
-                        <p>Please log in to edit this class</p>
+                        <p>Please log in to edit this class and to gives us your review </p>
                     )}
                 </div>
             </section>
