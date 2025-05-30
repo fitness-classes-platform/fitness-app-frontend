@@ -84,7 +84,7 @@ h3 {
 .welcome-class-btn{
     position: absolute;
     top: 90%;
-    left: 45%;
+    left: 40%;
     background-color: rgb(107, 0, 98);;
     color: white;
     padding: 0.5rem 1rem;
@@ -800,7 +800,7 @@ h3 {
     }
 
     .welcome-class-btn{
-        left: 35%;
+        left: 30%;
     }
 
     .navbar {
@@ -917,7 +917,7 @@ h3 {
     }
 
     .welcome-class-btn{
-        left: 41%;
+        left: 35%;
     }
 
     .navbar {
